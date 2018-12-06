@@ -12,33 +12,34 @@
 </head>
 <body style="background-image: url('../static/e5WlXi.jpg');">
     <div id="page" class="container">
-        <div>
-            <nav class="navbar navbar-expand-sm bg-light justify-content-center">
-                <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link" href="/home">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Schedule</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/ExGuide">Exercise Guide</a>
-                </li>
-                  <li class="nav-item">
-                  <a class="nav-link" href="#">Fitness Tracker</a>
-                </li>
-                  <li class="nav-item">
-                  <a class="nav-link" href="#">Health Tracker</a>
-                </li>
-                </ul>
-              </nav>
-        </div>
+        <!--<div>-->
+            <!--<nav class="navbar navbar-expand-sm bg-light justify-content-center">-->
+                <!--<ul class="navbar-nav">-->
+                <!--<li class="nav-item">-->
+                  <!--<a class="nav-link" href="/home">Home</a>-->
+                <!--</li>-->
+                <!--<li class="nav-item">-->
+                  <!--<a class="nav-link" href="#">Schedule</a>-->
+                <!--</li>-->
+                <!--<li class="nav-item">-->
+                  <!--<a class="nav-link" href="/ExGuide">Exercise Guide</a>-->
+                <!--</li>-->
+                  <!--<li class="nav-item">-->
+                  <!--<a class="nav-link" href="#">Fitness Tracker</a>-->
+                <!--</li>-->
+                  <!--<li class="nav-item">-->
+                  <!--<a class="nav-link" href="#">Health Tracker</a>-->
+                <!--</li>-->
+                <!--</ul>-->
+              <!--</nav>-->
+        <!--</div>-->
+        {% include 'includes/navbar.html' %}
         <div class='container'>
             <div>
                 <h2 class="font-weight-bold text-center headers">Welcome to the Exercise Guide!</h2>
             </div>
             <div id="guide_body">
-                <div class="jumbotron">
+                <div class="jumbotron" id="no1">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-6">
@@ -62,14 +63,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="jumbotron">
+                <div class="jumbotron" id="no2">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-6">
                                 <img style="width: 330px; height: 258px;" src="https://cdn2.coachmag.co.uk/sites/coachmag/files/styles/16x9_480/public/images/dir_30/mens_fitness_15427.jpg?itok=T3OF7wPv&timestamp=1369282187">
                             </div>
                             <div class="col-md-6">
-                                <p class="text-justify desc">Crunches is an exercise that involves lying face-up on the floor,
+                                <p class="text-justify desc">Crunching is an exercise that involves lying face-up on the floor,
                                 bending the knees then curling the shoulders towards the waist.</p>
                                 <dl>
                                     <dt>Muscles trained:</dt>
@@ -85,7 +86,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="jumbotron">
+                <div class="jumbotron" id="no3">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-6">
@@ -110,11 +111,88 @@
                         </div>
                     </div>
                 </div>
+                <div class="jumbotron" id="no4">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img style="width: 330px; height: 258px;" src="http://fitmw.com/wp-content/uploads/2015/07/Exercises-Tuck-Jump.jpg">
+                            </div>
+                            <div class="col-md-6">
+                                <p class="text-justify desc">Tuck jumping is an exercise that involves standing in a shoulder width position,
+                                 slowly descending into a squat and use your feet to explode off the floor while driving your knees towards your chest.</p>
+                                <dl>
+                                    <dt>Muscles trained:</dt>
+                                    <dd>-Abdominal muscles</dd>
+                                    <dd>-Hamstrings</dd>
+                                    <dd>-Calve muscles</dd>
+                                </dl>
+                                <a href="#tuckjump" class="btn btn-info" data-toggle="collapse">Show more</a>
+                                <div id="tuckjump" class="collapse">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="jumbotron" id="no5">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img style="width: 330px; height: 258px;" src="https://19jkon2dxx3g14btyo2ec2u9-wpengine.netdna-ssl.com/wp-content/uploads/2013/11/squats.jpg">
+                            </div>
+                            <div class="col-md-6">
+                                <p class="text-justify desc">Squatting is an exercise that involves standing in a shoulder width position,
+                                    bending your knees all the way down and then explode back up to standing.</p>
+                                <dl>
+                                    <dt>Muscles trained:</dt>
+                                    <dd>-Hip muscles</dd>
+                                    <dd>-Hamstrings</dd>
+                                    <dd>-Quads</dd>
+                                </dl>
+                                <a href="#squats" class="btn btn-info" data-toggle="collapse">Show more</a>
+                                <div id="squats" class="collapse">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="jumbotron" id="no6">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img style="width: 330px; height: 258px;" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/766/these-are-the-hardest-abs-moves-youll-ever-do-ss-flutter-kicks-1508878279.jpg?resize=480:*">
+                            </div>
+                            <div class="col-md-6">
+                                <p class="text-justify desc">Flutter kicks is an exercise that involves lying down face-up, straightening your legs until they are level
+                                    with your hips and alternating between lifting each leg.</p>
+                                <dl>
+                                    <dt>Muscles trained:</dt>
+                                    <dd>-Abdominal muscles</dd>
+                                    <dd>-Quads</dd>
+                                    <dd>-Hip muscles</dd>
+                                </dl>
+                                <a href="#flutter" class="btn btn-info" data-toggle="collapse">Show more</a>
+                                <div id="flutter" class="collapse">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <!-- jQuery first, then Bootstrap JS. -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+    <!-- ExGuide Javascript -->
+    <script src="../static/ExScript.js"></script>
 </body>
 </html>
