@@ -172,6 +172,14 @@ def guide():
 
         return render_template('ExGuide.html', exercise=exercise, exercise1=exercise1, exercise2=exercise2)
 
+@app.route('/schedule')
+def schedule():
+    return render_template('schedule.html')
+
+@app.route('/HealthTracker')
+def HealthTracker():
+    return render_template('HealthTracker.html')
+
 if __name__ == "__main__":
     app.secret_key='secret123'
     app.debug = True
