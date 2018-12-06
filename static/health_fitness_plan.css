@@ -34,9 +34,17 @@ table{
     background-color: white;
 }
 
-td > span{
+td > a:hover{
+    text-decoration: none;
+}
+
+td > a{
     color: black;
     font-weight: bold;
+}
+
+form{
+    border: 2px solid lightskyblue;
 }
 
 #poly{
