@@ -1,0 +1,1119 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Health & Fitness Schedule Planner</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='health_fitness_plan.css') }}">
+    <script src="{{ url_for('static', filename='health_fitness_plan.js') }}"></script>
+</head>
+<body>
+<!-- Navigation bar -->
+{% include 'includes/navbar.html' %}
+
+<!-- calendar page -->
+<div id="overlay">
+        <div id="spinner"></div>
+</div>
+<div class="container-fluid" id="container">
+    <div>
+        <h1 class="text-center">Health & Fitness Schedule Planner</h1>
+        <div>
+            <br>
+        </div>
+        <div>
+            <div id="planner" class="pagination col-8">
+                <!-- November month -->
+                <div id="Nov">
+                    <h3>Month/Year:
+                        <span class="important">November / 2018</span>
+                    </h3>
+                    <table class="table table-striped col-8" id="calendar">
+                        <tr>
+                            <th colspan="7">
+                                <button class="btn btn-success text-white" id="lastmth" onclick="BacktoOct()" disabled>&laquo;</button>
+                                November 2018
+                                <button class="btn btn-success text-white" id="nextmth" onclick="GotoDec()">&raquo;</button>
+                            </th>
+                        </tr>
+                        <tr>
+                            <!-- All the days in a week -->
+                            <th id="Sunday" class="text-danger">Sun</th>
+                            <th>Mon</th>
+                            <th>Tues</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                        </tr>
+                        <tr>
+                            <td class="lastmth">
+                                <a href="">28</a>
+                            </td>
+                            <td class="lastmth">
+                                <a href="">29</a>
+                            </td>
+                            <td class="lastmth">
+                                <a href="">30</a>
+                            </td>
+                            <td class="lastmth">
+                                <a href="">31</a>
+                            </td>
+                            <td>
+                                <a href="{{ url_for('todolist') }}">1</a>
+                            </td>
+                            <td>
+                                <a href="{{ url_for('todolist') }}">2</a>
+                            </td>
+                            <td>
+                                <a href="{{ url_for('todolist') }}">3</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="text-danger" href="{{ url_for('todolist') }}">4</a>
+                            </td>
+                            <td>
+                                <a href="{{ url_for('todolist') }}">5</a>
+                            </td>
+                            <td class="p-3 mb-2 bg-danger" data-toggle="tooltip" title="Deepavali">
+                                <a href="{{ url_for('todolist') }}">6</a>
+                            </td>
+                            <td>
+                                <a href="{{ url_for('todolist') }}">7</a>
+                            </td>
+                            <td>
+                                <a href="{{ url_for('todolist') }}">8</a>
+                            </td>
+                            <td>
+                                <a href="{{ url_for('todolist') }}">9</a>
+                            </td>
+                            <td>
+                                <a href="{{ url_for('todolist') }}">10</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="text-danger" href="{{ url_for('todolist') }}">11</a>
+                            </td>
+                            <td>
+                                <a href="{{ url_for('todolist') }}">12</a>
+                            </td>
+                            <td>
+                                <a href="{{ url_for('todolist') }}">13</a>
+                            </td>
+                            <td>
+                                <a href="{{ url_for('todolist') }}">14</a>
+                            </td>
+                            <td>
+                                <a href="{{ url_for('todolist') }}">15</a>
+                            </td>
+                            <td>
+                                <a href="{{ url_for('todolist') }}">16</a>
+                            </td>
+                            <td>
+                                <a href="{{ url_for('todolist') }}">17</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="text-danger" href="{{ url_for('todolist') }}">18</a>
+                            </td>
+                            <td>
+                                <a href="{{ url_for('todolist') }}">19</a>
+                            </td>
+                            <td>
+                                <a href="{{ url_for('todolist') }}">20</a>
+                            </td>
+                            <td>
+                                <a href="{{ url_for('todolist') }}">21</a>
+                            </td>
+                            <td>
+                                <a href="{{ url_for('todolist') }}">22</a>
+                            </td>
+                            <td>
+                                <a href="{{ url_for('todolist') }}">23</a>
+                            </td>
+                            <td>
+                                <a href="{{ url_for('todolist') }}">24</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="text-danger" href="{{ url_for('todolist') }}">25</a>
+                            </td>
+                            <td>
+                                <a href="{{ url_for('todolist') }}">26</a>
+                            </td>
+                            <td>
+                                <a href="{{ url_for('todolist') }}">27</a>
+                            </td>
+                            <td>
+                                <a href="{{ url_for('todolist') }}">28</a>
+                            </td>
+                            <td>
+                                <a href="{{ url_for('todolist') }}">29</a>
+                            </td>
+                            <td>
+                                <a href="{{ url_for('todolist') }}">30</a>
+                            </td>
+                            <td class="nextmth">
+                                <a href="">1</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- December month -->
+                <div id="Dec" style="display:none">
+                    <h3>Month/Year:
+                        <span class="important">December / 2018</span>
+                    </h3>
+                    <table class="table table-striped col-8" id="calendar">
+                        <tr>
+                            <th colspan="7">
+                                <button class="btn btn-success text-white" onclick="BacktoNov()">&laquo;</button>
+                                December 2018
+                                <button class="btn btn-success text-white" onclick="GotoJan()">&raquo;</button>
+                            </th>
+                        </tr>
+                        <tr>
+                            <!-- All the days in a week -->
+                            <th id="Sunday" class="text-danger">Sun</th>
+                            <th>Mon</th>
+                            <th>Tues</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                        </tr>
+                        <tr>
+                            <td class="lastmth">
+                                <a href="" onclick="Nov()">25</a>
+                            </td>
+                            <td class="lastmth">
+                                <a href="" onclick="Nov()">26</a>
+                            </td>
+                            <td class="lastmth">
+                                <a href="" onclick="Nov()">27</a>
+                            </td>
+                            <td class="lastmth">
+                                <a href="" onclick="Nov()">28</a>
+                            </td>
+                            <td class="lastmth">
+                                <a href="" onclick="Nov()">29</a>
+                            </td>
+                            <td class="lastmth">
+                                <a href="" onclick="Nov()">30</a>
+                            </td>
+                            <td>
+                                <a href="">1</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="text-danger" href="">2</a>
+                            </td>
+                            <td>
+                                <a href="">3</a>
+                            </td>
+                            <td>
+                                <a href="">4</a>
+                            </td>
+                            <td>
+                                <a href="">5</a>
+                            </td>
+                            <td>
+                                <a href="">6</a>
+                            </td>
+                            <td>
+                                <a href="">7</a>
+                            </td>
+                            <td>
+                                <a href="">8</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="text-danger" href="">9</a>
+                            </td>
+                            <td>
+                                <a href="">10</a>
+                            </td>
+                            <td>
+                                <a href="">11</a>
+                            </td>
+                            <td>
+                                <a href="">12</a>
+                            </td>
+                            <td>
+                                <a href="">13</a>
+                            </td>
+                            <td>
+                                <a href="">14</a>
+                            </td>
+                            <td class="p-3 mb-2 bg-primary">
+                                <a href="">15</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 mb-2 bg-primary">
+                                <a class="text-danger" href="">16</a>
+                            </td>
+                            <td class="p-3 mb-2 bg-primary">
+                                <a href="">17</a>
+                            </td>
+                            <td class="p-3 mb-2 bg-primary">
+                                <a href="">18</a>
+                            </td>
+                            <td class="p-3 mb-2 bg-primary">
+                                <a href="">19</a>
+                            </td>
+                            <td class="p-3 mb-2 bg-primary">
+                                <a href="">20</a>
+                            </td>
+                            <td class="p-3 mb-2 bg-primary">
+                                <a href="">21</a>
+                            </td>
+                            <td class="p-3 mb-2 bg-primary">
+                                <a href="">22</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 mb-2 bg-primary">
+                                <a class="text-danger" href="">23</a>
+                            </td>
+                            <td class="p-3 mb-2 bg-primary">
+                                <a href="">24</a>
+                            </td>
+                            <td class="p-3 mb-2 bg-danger" data-toggle="tooltip" title="Christmas Day">
+                                <a href="">25</a>
+                            </td>
+                            <td class="p-3 mb-2 bg-primary">
+                                <a href="">26</a>
+                            </td>
+                            <td class="p-3 mb-2 bg-primary">
+                                <a href="">27</a>
+                            </td>
+                            <td class="p-3 mb-2 bg-primary">
+                                <a href="">28</a>
+                            </td>
+                            <td class="p-3 mb-2 bg-primary">
+                                <a href="">29</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 mb-2 bg-primary">
+                                <a class="text-danger" href="">30</a>
+                            </td>
+                            <td>
+                                <a href="">31</a>
+                            </td>
+                            <td class="nextmth">
+                                <a href="">1</a>
+                            </td>
+                            <td class="nextmth">
+                                <a href="">2</a>
+                            </td>
+                            <td class="nextmth">
+                                <a href="">3</a>
+                            </td>
+                            <td class="nextmth">
+                                <a href="">4</a>
+                            </td>
+                            <td class="nextmth">
+                                <a href="">5</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- January month -->
+                <div id="Jan" style="display:none">
+                    <h3>Month/Year:
+                        <span class="important">January / 2019</span>
+                    </h3>
+                    <table class="table table-stripped col-8" id="calendar">
+                        <tr>
+                            <th colspan="7">
+                                <button class="btn btn-success text-white" onclick="BacktoDec()">&laquo;</button>
+                                January 2019
+                                <button class="btn btn-success text-white" onclick="GotoFeb()">&raquo;</button>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th class="text-danger">Sun</th>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                        </tr>
+                        <tr>
+                            <td class="lastmth">
+                                <a href="">30</a>
+                            </td>
+                            <td class="lastmth">
+                                <a href="">31</a>
+                            </td>
+                            <td class="p-3 mb-2 bg-danger" data-toggle="tooltip" title="New Year Day">
+                                <a href="">1</a>
+                            </td>
+                            <td>
+                                <a href="">2</a>
+                            </td>
+                            <td>
+                                <a href="">3</a>
+                            </td>
+                            <td>
+                                <a href="">4</a>
+                            </td>
+                            <td>
+                                <a href="">5</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="text-danger" href="">6</a>
+                            </td>
+                            <td>
+                                <a href="">7</a>
+                            </td>
+                            <td>
+                                <a href="">8</a>
+                            </td>
+                            <td>
+                                <a href="">9</a>
+                            </td>
+                            <td>
+                                <a href="">10</a>
+                            </td>
+                            <td>
+                                <a href="">11</a>
+                            </td>
+                            <td>
+                                <a href="">12</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="text-danger" href="">13</a>
+                            </td>
+                            <td>
+                                <a href="">14</a>
+                            </td>
+                            <td>
+                                <a href="">15</a>
+                            </td>
+                            <td>
+                                <a href="">16</a>
+                            </td>
+                            <td>
+                                <a href="">17</a>
+                            </td>
+                            <td>
+                                <a href="">18</a>
+                            </td>
+                            <td>
+                                <a href="">19</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="text-danger" href="">20</a>
+                            </td>
+                            <td>
+                                <a href="">21</a>
+                            </td>
+                            <td>
+                                <a href="">22</a>
+                            </td>
+                            <td>
+                                <a href="">23</a>
+                            </td>
+                            <td>
+                                <a href="">24</a>
+                            </td>
+                            <td>
+                                <a href="">25</a>
+                            </td>
+                            <td>
+                                <a href="">26</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="text-danger" href="">27</a>
+                            </td>
+                            <td>
+                                <a href="">28</a>
+                            </td>
+                            <td>
+                                <a href="">29</a>
+                            </td>
+                            <td>
+                                <a href="">30</a>
+                            </td>
+                            <td>
+                                <a href="">31</a>
+                            </td>
+                            <td class="nextmth">
+                                <a href="">1</a>
+                            </td>
+                            <td class="nextmth">
+                                <a href="">2</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- February month -->
+                <div id="Feb" style="display:none">
+                    <h3>Month/Year:
+                        <span class="important">February / 2019</span>
+                    </h3>
+                    <table class="table table-stripped col-8" id="calendar">
+                        <tr>
+                            <th colspan="7">
+                                <button class="btn btn-success text-white" onclick="BacktoJan()">&laquo;</button>
+                                February 2019
+                                <button class="btn btn-success text-white" onclick="GotoMar()">&raquo;</button>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th class="text-danger">Sun</th>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                        </tr>
+                        <tr>
+                            <td class="lastmth">
+                                <a href="">27</a>
+                            </td>
+                            <td class="lastmth">
+                                <a href="">28</a>
+                            </td>
+                            <td class="lastmth">
+                                <a href="">29</a>
+                            </td>
+                            <td class="lastmth">
+                                <a href="">30</a>
+                            </td>
+                            <td class="lastmth">
+                                <a href="">31</a>
+                            </td>
+                            <td>
+                                <a href="">1</a>
+                            </td>
+                            <td>
+                                <a href="">2</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="text-danger">3</a>
+                            </td>
+                            <td>
+                                <a href="">4</a>
+                            </td>
+                            <td class="p-3 mb-2 bg-danger" data-toggle="tooltip" title="Chinese New Year">
+                                <a href="">5</a>
+                            </td>
+                            <td class="p-3 mb-2 bg-danger" data-toggle="tooltip" title="Chinese New Year">
+                                <a href="">6</a>
+                            </td>
+                            <td>
+                                <a href="">7</a>
+                            </td>
+                            <td>
+                                <a href="">8</a>
+                            </td>
+                            <td>
+                                <a href="">9</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="text-danger">10</a>
+                            </td>
+                            <td>
+                                <a href="">11</a>
+                            </td>
+                            <td>
+                                <a href="">12</a>
+                            </td>
+                            <td>
+                                <a href="">13</a>
+                            </td>
+                            <td>
+                                <a href="">14</a>
+                            </td>
+                            <td>
+                                <a href="">15</a>
+                            </td>
+                            <td>
+                                <a href="">16</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="text-danger">17</a>
+                            </td>
+                            <td>
+                                <a href="">18</a>
+                            </td>
+                            <td>
+                                <a href="">19</a>
+                            </td>
+                            <td>
+                                <a href="">20</a>
+                            </td>
+                            <td>
+                                <a href="">21</a>
+                            </td>
+                            <td>
+                                <a href="">22</a>
+                            </td>
+                            <td>
+                                <a href="">23</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="text-danger">24</a>
+                            </td>
+                            <td>
+                                <a href="">25</a>
+                            </td>
+                            <td>
+                                <a href="">26</a>
+                            </td>
+                            <td>
+                                <a href="">27</a>
+                            </td>
+                            <td>
+                                <a href="">28</a>
+                            </td>
+                            <td class="nextmth">
+                                <a href="">1</a>
+                            </td>
+                            <td class="nextmth">
+                                <a href="">2</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- March month -->
+                <div id="Mar" style="display:none">
+                    <h3>Month/Year:
+                        <span class="important">March / 2019</span>
+                    </h3>
+                    <table class="table table-stripped col-8" id="calendar">
+                        <tr>
+                            <th colspan="7">
+                                <button class="btn btn-success text-white" onclick="BacktoFeb()">&laquo;</button>
+                                March 2019
+                                <button class="btn btn-success text-white" onclick="GotoApr()">&raquo;</button>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th class="text-danger">Sun</th>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                        </tr>
+                        <tr>
+                            <td class="lastmth">
+                                <a href="">24</a>
+                            </td>
+                            <td class="lastmth">
+                                <a href="">25</a>
+                            </td>
+                            <td class="lastmth">
+                                <a href="">26</a>
+                            </td>
+                            <td class="lastmth">
+                                <a href="">27</a>
+                            </td>
+                            <td class="lastmth">
+                                <a href="">28</a>
+                            </td>
+                            <td>
+                                <a href="">1</a>
+                            </td>
+                            <td>
+                                <a href="">2</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="text-danger" href="">3</a>
+                            </td>
+                            <td>
+                                <a href="">4</a>
+                            </td>
+                            <td>
+                                <a href="">5</a>
+                            </td>
+                            <td>
+                                <a href="">6</a>
+                            </td>
+                            <td>
+                                <a href="">7</a>
+                            </td>
+                            <td>
+                                <a href="">8</a>
+                            </td>
+                            <td>
+                                <a href="">9</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="text-danger" href="">10</a>
+                            </td>
+                            <td>
+                                <a href="">11</a>
+                            </td>
+                            <td>
+                                <a href="">12</a>
+                            </td>
+                            <td>
+                                <a href="">13</a>
+                            </td>
+                            <td>
+                                <a href="">14</a>
+                            </td>
+                            <td>
+                                <a href="">15</a>
+                            </td>
+                            <td>
+                                <a href="">16</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="text-danger">17</a>
+                            </td>
+                            <td>
+                                <a href="">18</a>
+                            </td>
+                            <td>
+                                <a href="">19</a>
+                            </td>
+                            <td>
+                                <a href="">20</a>
+                            </td>
+                            <td>
+                                <a href="">21</a>
+                            </td>
+                            <td>
+                                <a href="">22</a>
+                            </td>
+                            <td>
+                                <a href="">23</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="text-danger" href="">24</a>
+                            </td>
+                            <td>
+                                <a href="">25</a>
+                            </td>
+                            <td>
+                                <a href="">26</a>
+                            </td>
+                            <td>
+                                <a href="">27</a>
+                            </td>
+                            <td>
+                                <a href="">28</a>
+                            </td>
+                            <td>
+                                <a href="">29</a>
+                            </td>
+                            <td>
+                                <a href="">30</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="text-danger" href="">31</a>
+                            </td>
+                            <td class="nextmth">
+                                <a href="">1</a>
+                            </td>
+                            <td class="nextmth">
+                                <a href="">2</a>
+                            </td>
+                            <td class="nextmth">
+                                <a href="">3</a>
+                            </td>
+                            <td class="nextmth">
+                                <a href="">4</a>
+                            </td>
+                            <td class="nextmth">
+                                <a href="">5</a>
+                            </td>
+                            <td class="nextmth">
+                                <a href="">6</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- April month -->
+                <div id="Apr" style="display:none">
+                    <h3>Month/Year:
+                        <span class="important">April / 2019</span>
+                    </h3>
+                    <table class="table table-striped col-8" id="calendar">
+                        <tr>
+                            <th colspan="7">
+                                <button class="btn btn-success" onclick="BacktoMar()">&laquo;</button>
+                                April 2019
+                                <button class="btn btn-success" onclick="GotoMay()">&raquo;</button>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th class="text-danger">Sun</th>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                        </tr>
+                        <tr>
+                            <td class="lastmth">
+                                <a href="">31</a>
+                            </td>
+                            <td>
+                                <a href="">1</a>
+                            </td>
+                            <td>
+                                <a href="">2</a>
+                            </td>
+                            <td>
+                                <a href="">3</a>
+                            </td>
+                            <td>
+                                <a href="">4</a>
+                            </td>
+                            <td>
+                                <a href="">5</a>
+                            </td>
+                            <td>
+                                <a href="">6</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="text-danger">7</a>
+                            </td>
+                            <td>
+                                <a href="">8</a>
+                            </td>
+                            <td>
+                                <a href="">9</a>
+                            </td>
+                            <td>
+                                <a href="">10</a>
+                            </td>
+                            <td>
+                                <a href="">11</a>
+                            </td>
+                            <td>
+                                <a href="">12</a>
+                            </td>
+                            <td>
+                                <a href="">13</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="text-danger">14</a>
+                            </td>
+                            <td>
+                                <a href="">15</a>
+                            </td>
+                            <td>
+                                <a href="">16</a>
+                            </td>
+                            <td>
+                                <a href="">17</a>
+                            </td>
+                            <td>
+                                <a href="">18</a>
+                            </td>
+                            <td>
+                                <a href="">19</a>
+                            </td>
+                            <td>
+                                <a href="">20</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="text-danger">21</a>
+                            </td>
+                            <td>
+                                <a href="">22</a>
+                            </td>
+                            <td>
+                                <a href="">23</a>
+                            </td>
+                            <td>
+                                <a href="">24</a>
+                            </td>
+                            <td>
+                                <a href="">25</a>
+                            </td>
+                            <td>
+                                <a href="">26</a>
+                            </td>
+                            <td>
+                                <a href="">27</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="text-danger">28</a>
+                            </td>
+                            <td>
+                                <a href="">29</a>
+                            </td>
+                            <td>
+                                <a href="">30</a>
+                            </td>
+                            <td class="nextmth">
+                                <a href="">1</a>
+                            </td>
+                            <td class="nextmth">
+                                <a href="">2</a>
+                            </td>
+                            <td class="nextmth">
+                                <a href="">3</a>
+                            </td>
+                            <td class="nextmth">
+                                <a href="">4</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- May month -->
+                <div id="May" style="display:none">
+                    <h3>Month/Year:
+                        <span class="important">May / 2019</span>
+                    </h3>
+                    <table class="table table-striped" id="calendar">
+                        <tr>
+                            <th colspan="7">
+                                <button class="btn btn-success" onclick="BacktoApr()">&laquo;</button>
+                                May 2019
+                                <button class="btn btn-success">&raquo;</button>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th class="text-danger">Sun</th>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                        </tr>
+                        <tr>
+                            <td class="lastmth">
+                                <a href="">28</a>
+                            </td>
+                            <td class="lastmth">
+                                <a href="">29</a>
+                            </td>
+                            <td class="lastmth">
+                                <a href="">30</a>
+                            </td>
+                            <td>
+                                <a href="">1</a>
+                            </td>
+                            <td>
+                                <a href="">2</a>
+                            </td>
+                            <td>
+                                <a href="">3</a>
+                            </td>
+                            <td>
+                                <a href="">4</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="text-danger" href="">5</a>
+                            </td>
+                            <td>
+                                <a href="">6</a>
+                            </td>
+                            <td>
+                                <a href="">7</a>
+                            </td>
+                            <td>
+                                <a href="">8</a>
+                            </td>
+                            <td>
+                                <a href="">9</a>
+                            </td>
+                            <td>
+                                <a href="">10</a>
+                            </td>
+                            <td>
+                                <a href="">11</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="text-danger" href="">12</a>
+                            </td>
+                            <td>
+                                <a href="">13</a>
+                            </td>
+                            <td>
+                                <a href="">14</a>
+                            </td>
+                            <td>
+                                <a href="">15</a>
+                            </td>
+                            <td>
+                                <a href="">16</a>
+                            </td>
+                            <td>
+                                <a href="">17</a>
+                            </td>
+                            <td>
+                                <a href="">18</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="text-danger" href="">19</a>
+                            </td>
+                            <td>
+                                <a href="">20</a>
+                            </td>
+                            <td>
+                                <a href="">21</a>
+                            </td>
+                            <td>
+                                <a href="">22</a>
+                            </td>
+                            <td>
+                                <a href="">23</a>
+                            </td>
+                            <td>
+                                <a href="">24</a>
+                            </td>
+                            <td>
+                                <a href="">25</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="text-danger" href="">26</a>
+                            </td>
+                            <td>
+                                <a href="">27</a>
+                            </td>
+                            <td>
+                                <a href="">28</a>
+                            </td>
+                            <td>
+                                <a href="">29</a>
+                            </td>
+                            <td>
+                                <a href="">30</a>
+                            </td>
+                            <td>
+                                <a href="">31</a>
+                            </td>
+                            <td class="nextmth">
+                                <a href="">1</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="legendcont" class="col-lg-3 col-sm-12">
+
+                <div id="legend" class="col-12 ">
+                    <p>Legend</p>
+                    <p>(Hover over to get the details):</p>
+                    <div class="p-3 mb-2 bg-primary text-dark" data-toggle="tooltip" title="School Holiday">
+                        <div>
+                            <p id="Hol" class="text-center">December<br>20</p>
+                        </div>
+                    </div>
+
+                    <div class="p-3 mb-2 bg-danger text-dark" data-toggle="tooltip" title="Public Holiday">
+                        <div>
+                            <p id="PH" class="text-center">November<br>6</p>
+                        </div>
+                    </div>
+
+                    <div class="p-3 mb-2 bg-secondary text-white" data-toggle="tooltip" title="Next/Last Month">
+                        <div>
+                            <p id="nextlast" class="text-center">January<br>3</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <br>
+            </div>
+            <div id="plannerinstruction" class="col-lg-12">
+                <button id="displayinstruction" class="btn btn-primary col-12" data-toggle="collapse" data-target="#instruction">Instructions</button>
+                <div id="instruction" class="collapse">
+                    <table id="allinstruction" class="table table-light">
+                        <thead>
+                        <tr class="table-success">
+                            <th>Instructions on how to use the Calendar Planner</th>
+                        </tr>
+                        </thead>
+                        <tr>
+                            <td>&#8226; You will need to PICK any of the days on the Calendar and click on the particular day</td>
+                        </tr>
+                        <tr class="table-success">
+                            <td>&#8226; You will enter into a To-Do-List page where you will need to set the date and time slot to do your task</td>
+                        </tr>
+                        <tr>
+                            <td>&#8226; After finish setting your To-Do-List, you will need to click on the
+                                <button class="btn btn-success">Submit your inputs</button>
+                                in order to save all your inputs
+                            </td>
+                        </tr>
+                        <tr class="table-success">
+                            <td>&#8226; Click on the
+                                <button class="btn btn-danger">Back to Calendar page</button>
+                                to go back to the Calendar page (But BEWARE! Once you click this button all your inputs will be erased if you did not save your inputs)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&#8226; Hover over the dates in the LEGEND MENU to display the details on what each colors represent</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
