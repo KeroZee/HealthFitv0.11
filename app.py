@@ -3,6 +3,8 @@ from flask_mysqldb import MySQL
 from wtforms import Form, StringField, IntegerField, FloatField, TextAreaField, PasswordField, validators
 from passlib.hash import sha256_crypt
 from functools import wraps
+from random import randint
+from Exercises import Exercises
 app = Flask(__name__)
 
 #Config MySQL
@@ -120,6 +122,55 @@ def logout():
     session.clear()
     flash('You are now logged out','success')
     return redirect(url_for('login'))
+
+@app.route('/ExGuide')
+def guide():
+    def guide():
+        exercises_list = []
+        int_list = []
+        e1 = Exercises(
+            "A push-up is a common exercise that involves beginning from the prone position,then raising and lowering the body using the arms.",
+            "Pectoral muscles, Triceps", "Steps")
+        e2 = Exercises(
+            'Crunching is an exercise that involves lying face-up on the floor,bending the knees then curling the shoulders towards the waist.',
+            'Abdominal muscles', 'Steps')
+        e3 = Exercises(
+            'Jumping Jacks is an exercise that involves jumping with the legs spread wide and hands touching overhead then returning to a position with the feet together and arms at the sides.',
+            'Calve muscles, Shoulder muscles, Hip muscles', 'Steps')
+        e4 = Exercises(
+            'Tuck jumping is an exercise that involves standing in a shoulder width position, slowly descending into a squat and use your feet to explode off the floor while driving your knees towards your chest.',
+            'Abdominal muscles, Hamstrings, Calve muscles', 'Steps')
+        e5 = Exercises(
+            'Squatting is an exercise that involves standing in a shoulder width position, bending your knees all the way down and then explode back up to standing.',
+            'Hip muscles, Hamstrings, Quads', 'Steps')
+        e6 = Exercises(
+            'Flutter kicks is an exercise that involves lying down face-up, straightening your legs until they are level with your hips and alternating between lifting each leg.',
+            'Abdominal muscles, Hip muscles, Quads', 'Steps')
+        exercises_list.extend([e1, e2, e3, e4, e5, e6])
+
+        exercise = ""
+        exercise1 = ""
+        exercise2 = ""
+
+        while exercise == "":
+            cycle = randint(0, 5)
+            if cycle not in int_list:
+                exercise = exercises_list[cycle]
+                int_list.append(cycle)
+
+        while exercise1 == "":
+            cycle = randint(0, 5)
+            if cycle not in int_list:
+                exercise1 = exercises_list[cycle]
+                int_list.append(cycle)
+
+        while exercise2 == "":
+            cycle = randint(0, 5)
+            if cycle not in int_list:
+                exercise2 = exercises_list[cycle]
+                int_list.append(cycle)
+
+        return render_template('ExGuide.html', exercise=exercise, exercise1=exercise1, exercise2=exercise2)
 
 if __name__ == "__main__":
     app.secret_key='secret123'
