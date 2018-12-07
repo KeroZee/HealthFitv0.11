@@ -125,52 +125,51 @@ def logout():
 
 @app.route('/ExGuide')
 def guide():
-    def guide():
-        exercises_list = []
-        int_list = []
-        e1 = Exercises(
-            "A push-up is a common exercise that involves beginning from the prone position,then raising and lowering the body using the arms.",
-            "Pectoral muscles, Triceps", "Steps")
-        e2 = Exercises(
-            'Crunching is an exercise that involves lying face-up on the floor,bending the knees then curling the shoulders towards the waist.',
-            'Abdominal muscles', 'Steps')
-        e3 = Exercises(
-            'Jumping Jacks is an exercise that involves jumping with the legs spread wide and hands touching overhead then returning to a position with the feet together and arms at the sides.',
-            'Calve muscles, Shoulder muscles, Hip muscles', 'Steps')
-        e4 = Exercises(
-            'Tuck jumping is an exercise that involves standing in a shoulder width position, slowly descending into a squat and use your feet to explode off the floor while driving your knees towards your chest.',
-            'Abdominal muscles, Hamstrings, Calve muscles', 'Steps')
-        e5 = Exercises(
-            'Squatting is an exercise that involves standing in a shoulder width position, bending your knees all the way down and then explode back up to standing.',
-            'Hip muscles, Hamstrings, Quads', 'Steps')
-        e6 = Exercises(
-            'Flutter kicks is an exercise that involves lying down face-up, straightening your legs until they are level with your hips and alternating between lifting each leg.',
-            'Abdominal muscles, Hip muscles, Quads', 'Steps')
-        exercises_list.extend([e1, e2, e3, e4, e5, e6])
+    exercises_list = []
+    int_list = []
+    e1 = Exercises(
+        "A push-up is a common exercise that involves beginning from the prone position,then raising and lowering the body using the arms.",
+        "Pectoral muscles, Triceps", "Steps", "https://cdn-ami-drupal.heartyhosting.com/sites/muscleandfitness.com/files/styles/full_node_image_1090x614/public/media/1109-pushups_0.jpg?itok=QyFVWqN6")
+    e2 = Exercises(
+        'Crunching is an exercise that involves lying face-up on the floor,bending the knees then curling the shoulders towards the waist.',
+        'Abdominal muscles', 'Steps', "https://cdn2.coachmag.co.uk/sites/coachmag/files/styles/16x9_480/public/images/dir_30/mens_fitness_15427.jpg?itok=T3OF7wPv&timestamp=1369282187")
+    e3 = Exercises(
+        'Jumping Jacks is an exercise that involves jumping with the legs spread wide and hands touching overhead then returning to a position with the feet together and arms at the sides.',
+        'Calve muscles, Shoulder muscles, Hip muscles', 'Steps', "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/1104-jumping-jacks-1441032989.jpg")
+    e4 = Exercises(
+        'Tuck jumping is an exercise that involves standing in a shoulder width position, slowly descending into a squat and use your feet to explode off the floor while driving your knees towards your chest.',
+        'Abdominal muscles, Hamstrings, Calve muscles', 'Steps', "http://fitmw.com/wp-content/uploads/2015/07/Exercises-Tuck-Jump.jpg")
+    e5 = Exercises(
+        'Squatting is an exercise that involves standing in a shoulder width position, bending your knees all the way down and then explode back up to standing.',
+        'Hip muscles, Hamstrings, Quads', 'Steps', "https://19jkon2dxx3g14btyo2ec2u9-wpengine.netdna-ssl.com/wp-content/uploads/2013/11/squats.jpg")
+    e6 = Exercises(
+        'Flutter kicks is an exercise that involves lying down face-up, straightening your legs until they are level with your hips and alternating between lifting each leg.',
+        'Abdominal muscles, Hip muscles, Quads', 'Steps', "https://i.pinimg.com/originals/74/d8/55/74d855acc30ffdfe3c7410f3c278918b.jpg")
+    exercises_list.extend([e1, e2, e3, e4, e5, e6])
 
-        exercise = ""
-        exercise1 = ""
-        exercise2 = ""
+    exercise = ""
+    exercise1 = ""
+    exercise2 = ""
 
-        while exercise == "":
-            cycle = randint(0, 5)
-            if cycle not in int_list:
-                exercise = exercises_list[cycle]
-                int_list.append(cycle)
+    while exercise == "":
+        cycle = randint(0, 5)
+        if cycle not in int_list:
+            exercise = exercises_list[cycle]
+            int_list.append(cycle)
 
-        while exercise1 == "":
-            cycle = randint(0, 5)
-            if cycle not in int_list:
-                exercise1 = exercises_list[cycle]
-                int_list.append(cycle)
+    while exercise1 == "":
+        cycle = randint(0, 5)
+        if cycle not in int_list:
+            exercise1 = exercises_list[cycle]
+            int_list.append(cycle)
 
-        while exercise2 == "":
-            cycle = randint(0, 5)
-            if cycle not in int_list:
-                exercise2 = exercises_list[cycle]
-                int_list.append(cycle)
+    while exercise2 == "":
+        cycle = randint(0, 5)
+        if cycle not in int_list:
+            exercise2 = exercises_list[cycle]
+            int_list.append(cycle)
 
-        return render_template('ExGuide.html', exercise=exercise, exercise1=exercise1, exercise2=exercise2)
+    return render_template('ExGuide.html', exercise=exercise, exercise1=exercise1, exercise2=exercise2)
 
 @app.route('/schedule')
 def schedule():
