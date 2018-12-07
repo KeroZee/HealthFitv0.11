@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fitness tracker</title>
+    <style type="text/css">
+        @import url('//fonts.googleapis.com/css?family=Lato:400');
+        @import url('//fonts.googleapis.com/css?family=Lusitana:400,700');
+    </style>
+
+    <style data-glamor="cxs-default-sheet" type="text/css">.x .px_-letter-spacing-1px {
+        letter-spacing: 1px
+    }
+
+    .x .px_-text-transform-uppercase {
+        text-transform: uppercase
+    }
+
+    .x .px_-bc-rgb255__255__255 {
+        background-color: rgb(255, 255, 255)
+    }
+
+    .x .px_-w-100P {
+        width: 100%
+    }
+
+    .x .px__CA_div-position-relative > div {
+        position: relative
+    }
+
+    .x .px__CA_div-overflow-hidden > div {
+        overflow: hidden
+    }
+
+    .x .px__CA_div-m-auto > div {
+        margin: auto
+    }
+
+    .x .px_-ff-_Lato___arial__sans-serif {
+        font-family: 'Lato', arial, sans-serif
+    }
+
+    .x .px_-fs-16 {
+        font-size: 16px
+    }
+
+    .x .px_-z-index-1001 {
+        z-index: 1001
+    }
+
+    .x .px_-bc-rgb22__22__22 {
+        background-color: rgb(22, 22, 22)
+    }
+
+    .x .px_-pt-60px {
+        padding-top: 60px
+    }
+
+    .x .px_-pb-60px {
+        padding-bottom: 60px
+    }
+
+    .x .px_-p-0px__important {
+        padding: 0px !important
+    }
+
+    .x .px_-d-none {
+        display: none
+    }
+
+    .x .px_-position-relative {
+        position: relative
+    }
+
+    .x .px_-m-0 {
+        margin: 0
+    }
+
+    .x .px_-h-auto {
+        height: auto
+    }
+
+    .x .px_-h-100P {
+        height: 100%
+    }
+
+    .x .px_-position-absolute {
+        position: absolute
+    }
+
+    .x .px_-top-0 {
+        top: 0
+    }
+
+    .x .px_-left-0 {
+        left: 0
+    }
+
+    .x .px_-right-0 {
+        right: 0
+    }
+
+    .x .px_-bottom-0 {
+        bottom: 0
+    }
+
+    .x .px_-d-flex {
+        display: flex
+    }
+
+    .x .px_-background-position-50p7P_54p35P {
+        background-position: 50.7% 54.35%
+    }
+
+    .x .px_-background-size-cover {
+        background-size: cover
+    }
+
+    .x .px_-background-blend-mode-normal {
+        background-blend-mode: normal
+    }
+
+    .x .px_-background-repeat-no-repeat {
+        background-repeat: no-repeat
+    }
+
+    .x .px_-min-height-300 {
+        min-height: 300px
+    }
+
+    .x .px_-transition-opacity_0p25s__background-size_0p25s__background-position_0p25s {
+        transition: opacity 0.25s, background-size 0.25s, background-position 0.25s
+    }
+
+    .x .px_-bi-url___img1pwsimgpcom_isteam_ip_6f953e8e-3d8b-4559-908e-a0d20d9ad096_661035b2-54bb-43c2-b325-9c49c785b9d0pjpg___cr_t_0P25_l_19p35P25_w_80p65P25_h_80p65P25_rs_w_50_h_50_cg_true_m_cr_w_50_h_50_ax_50p7P25_ay_54p35P25_ {
+        background-image: url("//img1.wsimg.com/isteam/ip/6f953e8e-3d8b-4559-908e-a0d20d9ad096/661035b2-54bb-43c2-b325-9c49c785b9d0.jpg/:/cr=t:0%25,l:19.35%25,w:80.65%25,h:80.65%25/rs=w:50,h:50,cg:true,m/cr=w:50,h:50,ax:50.7%25,ay:54.35%25")
+    }
+
+    .x .px_-align-items-stretch {
+        align-items: stretch
+    }
+
+    .x .px_-flex-direction-column {
+        flex-direction: column
+    }
+
+    .x .px_-bc-transparent {
+        background-color: transparent
+    }
+
+    .x .px_-bc-rgba22__22__22__0p9 {
+        background-color: rgba(22, 22, 22, 0.9)
+    }
+
+    .x .px_-ml-auto {
+        margin-left: auto
+    }
+
+    .x .px_-mr-auto {
+        margin-right: auto
+    }
+
+    .x .px_-pl-20px {
+        padding-left: 20px
+    }
+
+    .x .px_-pr-20px {
+        padding-right: 20px
+    }
+
+    .x .px_-max-width-100P {
+        max-width: 100%
+    }
+
+    .x .px_-pt-15px {
+        padding-top: 15px
+    }
+
+    .x .px_-pb-15px {
+        padding-bottom: 15px
+    }
+
+    .x .px_-justify-content-center {
+        justify-content: center
+    }
+
+    .x .px_-align-items-center {
+        align-items: center
+    }
+
+    .x .px_-d-inline-block {
+        display: inline-block
+    }
+
+    .x .px_-w-auto {
+        width: auto
+    }
+
+    .x .px_-letter-spacing-normal {
+        letter-spacing: normal
+    }
+
+    .x .px_-text-transform-none {
+        text-transform: none
+    }
+
+    .x .px_-overflow-wrap-break-word {
+        overflow-wrap: break-word
+    }
+
+    .x .px_-fw-400 {
+        font-weight: 400
+    }
+
+    .x .px_-c-rgb105__205__60 {
+        color: rgb(105, 205, 60)
+    }
+
+    .x .px_-text-decoration-none {
+        text-decoration: none
+    }
+
+    .x .px_-d-inline {
+        display: inline
+    }
+
+    .x .px_-cursor-pointer {
+        cursor: pointer
+    }
+
+    .x .px_-ff-_Lusitana___Georgia__serif {
+        font-family: 'Lusitana', Georgia, serif
+    }
+
+    .x .px__hover-c-rgb105__205__60:hover {
+        color: rgb(105, 205, 60)
+    }
+
+    .x .px_-word-wrap-break-word {
+        word-wrap: break-word
+    }
+
+    .x .px_-word-break-break-word {
+        word-break: break-word
+    }
+
+    .x .px_-fs-25 {
+        font-size: 25px
+    }
+
+    .x .px_-lh-1p2 {
+        line-height: 1.2
+    }
+
+    .x .px_-ml-0 {
+        margin-left: 0
+    }
+
+    .x .px_-mr-0 {
+        margin-right: 0
+    }
+
+    .x .px_-mt-0 {
+        margin-top: 0
+    }
+
+    .x .px_-mb-0 {
+        margin-bottom: 0
+    }
+
+    .x .px_-text-align-center {
+        text-align: center
+    }
+
+    .x .px_-d-block {
+        display: block
+    }
+
+    .x .px_-box-sizing-border-box {
+        box-sizing: border-box
+    }
+
+    .x .px_-flex-direction-row {
+        flex-direction: row
+    }
+
+    .x .px_-flex-wrap-nowrap {
+        flex-wrap: nowrap
+    }
+
+    .x .px_-m-0_-10px_0 {
+        margin: 0 -10px 0
+    }
+
+    .x .px_-flex-grow-1 {
+        flex-grow: 1
+    }
+
+    .x .px_-flex-shrink-1 {
+        flex-shrink: 1
+    }
+
+    .x .px_-flex-basis-auto {
+        flex-basis: auto
+    }
+
+    .x .px_-p-0_10px_0 {
+        padding: 0 10px 0
+    }
+
+    .x .px_-fs-20 {
+        font-size: 20px
+    }
+
+    .x .px_-mt-60px {
+        margin-top: 60px
+    }
+
+    .x .px_-mb-60px {
+        margin-bottom: 60px
+    }
+
+    .x .px_-border-radius-50P {
+        border-radius: 50%
+    }
+
+    .x .px_-bc-rgba105__205__60__0p9 {
+        background-color: rgba(105, 205, 60, 0.9)
+    }
+
+    .x .px_-p-12px {
+        padding: 12px
+    }
+
+    .x .px_-w-300px {
+        width: 300px
+    }
+
+    .x .px_-h-300px {
+        height: 300px
+    }
+
+    .x .px_-overflow-hidden {
+        overflow: hidden
+    }
+
+    .x .px_-c-rgb33__37__32 {
+        color: rgb(33, 37, 32)
+    }
+
+    .x .px__CA_p-m-0 > p {
+        margin: 0
+    }
+
+    .x .px_-c-inherit {
+        color: inherit
+    }
+
+    .x .px_-fs-unset {
+        font-size: unset
+    }
+
+    .x .px_-fw-700 {
+        font-weight: 700
+    }
+
+    .x .px_-c-rgb67__134__36 {
+        color: rgb(67, 134, 36)
+    }
+
+    .x .px_-lh-1p4 {
+        line-height: 1.4
+    }
+
+    .x .px_-mb-40px {
+        margin-bottom: 40px
+    }
+
+    .x .px_-max-width-80P {
+        max-width: 80%
+    }
+
+    .x .px__before-right-100P:before {
+        right: 100%
+    }
+
+    .x .px__before-mr-20px:before {
+        margin-right: 20px
+    }
+
+    .x .px__before-content-__:before {
+        content: ""
+    }
+
+    .x .px__before-h-1px:before {
+        height: 1px
+    }
+
+    .x .px__before-mt--1px:before {
+        margin-top: -1px
+    }
+
+    .x .px__before-b-currentColor:before {
+        background: currentColor
+    }
+
+    .x .px__before-position-absolute:before {
+        position: absolute
+    }
+
+    .x .px__before-top-p75em:before {
+        top: .75em
+    }
+
+    .x .px__before-w-100vw:before {
+        width: 100vw
+    }
+
+    .x .px__before-d-block:before {
+        display: block
+    }
+
+    .x .px__after-left-100P:after {
+        left: 100%
+    }
+
+    .x .px__after-ml-20px:after {
+        margin-left: 20px
+    }
+
+    .x .px__after-content-__:after {
+        content: ""
+    }
+
+    .x .px__after-h-1px:after {
+        height: 1px
+    }
+
+    .x .px__after-mt--1px:after {
+        margin-top: -1px
+    }
+
+    .x .px__after-b-currentColor:after {
+        background: currentColor
+    }
+
+    .x .px__after-position-absolute:after {
+        position: absolute
+    }
+
+    .x .px__after-top-p75em:after {
+        top: .75em
+    }
+
+    .x .px__after-w-100vw:after {
+        width: 100vw
+    }
+
+    .x .px__after-d-block:after {
+        display: block
+    }
+
+    .x .px_-flex-wrap-wrap {
+        flex-wrap: wrap
+    }
+
+    .x .px_-m-0_-10px_-20px {
+        margin: 0 -10px -20px
+    }
+
+    .x .px_-flex-basis-100P {
+        flex-basis: 100%
+    }
+
+    .x .px_-p-0_10px_20px {
+        padding: 0 10px 20px
+    }
+
+    .x .px__CA_AS-max-width-100P > * {
+        max-width: 100%
+    }
+
+    .x .px__CA__nth-childn-mb-20px > :nth-child(n) {
+        margin-bottom: 20px
+    }
+
+    .x .px___CA__last-child-mb-0__important > :last-child {
+        margin-bottom: 0 !important
+    }
+
+    .x .px_-c-rgb27__27__27 {
+        color: rgb(27, 27, 27)
+    }
+
+    .x .px_-lh-1p25 {
+        line-height: 1.25
+    }
+
+    .x .px_-align-self-center {
+        align-self: center
+    }
+
+    .x .px_-order--1 {
+        order: -1
+    }
+
+    .x .px_-object-fit-cover {
+        object-fit: cover
+    }
+
+    .x .px_-c-rgb94__94__94 {
+        color: rgb(94, 94, 94)
+    }
+
+    .x .px_-lh-1p5 {
+        line-height: 1.5
+    }
+
+    .x .px__CA_p_CA_ol-text-align-left > p > ol {
+        text-align: left
+    }
+
+    .x .px__CA_p_CA_ol-d-inline-block > p > ol {
+        display: inline-block
+    }
+
+    .x .px__CA_p_CA_ol-pl-1p3em > p > ol {
+        padding-left: 1.3em
+    }
+
+    .x .px__CA_p_CA_ol-ml-30px > p > ol {
+        margin-left: 30px
+    }
+
+    .x .px__CA_p_CA_ol-mr-30px > p > ol {
+        margin-right: 30px
+    }
+
+    .x .px__CA_p_CA_ul-text-align-left > p > ul {
+        text-align: left
+    }
+
+    .x .px__CA_p_CA_ul-d-inline-block > p > ul {
+        display: inline-block
+    }
+
+    .x .px__CA_p_CA_ul-pl-1p3em > p > ul {
+        padding-left: 1.3em
+    }
+
+    .x .px__CA_p_CA_ul-ml-30px > p > ul {
+        margin-left: 30px
+    }
+
+    .x .px__CA_p_CA_ul-mr-30px > p > ul {
+        margin-right: 30px
+    }
+
+    .x .px__CA_ul-text-align-left > ul {
+        text-align: left
+    }
+
+    .x .px__CA_ul-d-inline-block > ul {
+        display: inline-block
+    }
+
+    .x .px__CA_ul-pl-1p3em > ul {
+        padding-left: 1.3em
+    }
+
+    .x .px__CA_ul-ml-30px > ul {
+        margin-left: 30px
+    }
+
+    .x .px__CA_ul-mr-30px > ul {
+        margin-right: 30px
+    }
+
+    .x .px__CA_ol-text-align-left > ol {
+        text-align: left
+    }
+
+    .x .px__CA_ol-d-inline-block > ol {
+        display: inline-block
+    }
+
+    .x .px__CA_ol-pl-1p3em > ol {
+        padding-left: 1.3em
+    }
+
+    .x .px__CA_ol-ml-30px > ol {
+        margin-left: 30px
+    }
+
+    .x .px__CA_ol-mr-30px > ol {
+        margin-right: 30px
+    }
+
+    .x .px_-bc-rgb246__246__246 {
+        background-color: rgb(246, 246, 246)
+    }
+
+    .x .px_-c-rgb62__126__33 {
+        color: rgb(62, 126, 33)
+    }
+
+    .x .px_-text-align-left {
+        text-align: left
+    }
+
+    .x .px__CA__nth-childn-mb-30px > :nth-child(n) {
+        margin-bottom: 30px
+    }
+
+    .x .px_-align-items-flex-start {
+        align-items: flex-start
+    }
+
+    .x .px_-c-rgb21__21__21 {
+        color: rgb(21, 21, 21)
+    }
+
+    .x .px_-c-rgb87__87__87 {
+        color: rgb(87, 87, 87)
+    }
+
+    .x .px_-p-0 {
+        padding: 0px
+    }
+
+    .x .px_-c-rgb247__247__247 {
+        color: rgb(247, 247, 247)
+    }
+
+    .x .px_-c-rgb137__137__137 {
+        color: rgb(137, 137, 137)
+    }
+
+    .x .px_-mt-20px {
+        margin-top: 20px
+    }</style>
+    <style data-glamor="cxs-media-sheet" type="text/css"></style>
+    <style data-glamor="cxs-xs-sheet" type="text/css">
+        @media (max-width: 767px) {
+            .x ._xs-onlypx_-pt-40px {
+                padding-top: 40px
+            }
+        }
+
+        @media (max-width: 767px) {
+            .x ._xs-onlypx_-pb-40px {
+                padding-bottom: 40px
+            }
+        }
+
+        @media (max-width: 767px) {
+            .x ._xs-onlypx_-w-280px {
+                width: 280px
+            }
+        }
+
+        @media (max-width: 767px) {
+            .x ._xs-onlypx_-h-280px {
+                height: 280px
+            }
+        }
+
+        @media (max-width: 767px) {
+            .x ._xs-onlypx_-p-30px {
+                padding: 30px
+            }
+        }
+
+        @media (max-width: 767px) {
+            .x ._xs-onlypx_-overflow-visible {
+                overflow: visible
+            }
+        }
+
+        @media (max-width: 767px) {
+            .x ._xs-onlypx_-fs-20 {
+                font-size: 20px
+            }
+        }
+
+        @media (max-width: 767px) {
+            .x ._xs-onlypx__CA__nth-childn-mb-20px > :nth-child(n) {
+                margin-bottom: 20px
+            }
+        }
+
+        @media (max-width: 767px) {
+            .x ._xs-onlypx___CA__last-child-mb-0__important > :last-child {
+                margin-bottom: 0 !important
+            }
+        }
+    </style>
+    <style data-glamor="cxs-sm-sheet" type="text/css">
+        @media (min-width: 768px) {
+            .x ._smpx_-w-728px {
+                width: 728px
+            }
+        }
+
+        @media (min-width: 768px) {
+            .x ._smpx_-m-0_-20px_0 {
+                margin: 0 -20px 0
+            }
+        }
+
+        @media (min-width: 768px) {
+            .x ._smpx_-p-0_20px_0 {
+                padding: 0 20px 0
+            }
+        }
+
+        @media (min-width: 768px) {
+            .x ._smpx_-mr-0 {
+                margin-right: 0px
+            }
+        }
+
+        @media (min-width: 768px) {
+            .x ._smpx_-h-400px {
+                height: 400px
+            }
+        }
+
+        @media (min-width: 768px) {
+            .x ._smpx_-w-400px {
+                width: 400px
+            }
+        }
+
+        @media (min-width: 768px) {
+            .x ._smpx_-p-30px {
+                padding: 30px
+            }
+        }
+
+        @media (min-width: 768px) {
+            .x ._smpx_-m-0_-20px_-40px {
+                margin: 0 -20px -40px
+            }
+        }
+
+        @media (min-width: 768px) {
+            .x ._smpx_-p-0_20px_40px {
+                padding: 0 20px 40px
+            }
+        }
+
+        @media (min-width: 768px) {
+            .x ._smpx_-flex-basis-50P {
+                flex-basis: 50%
+            }
+        }
+
+        @media (min-width: 768px) {
+            .x ._smpx_-max-width-50P {
+                max-width: 50%
+            }
+        }
+
+        @media (min-width: 768px) {
+            .x ._smpx_-flex-basis-83p33333333333334P {
+                flex-basis: 83.33333333333334%
+            }
+        }
+
+        @media (min-width: 768px) {
+            .x ._smpx_-max-width-83p33333333333334P {
+                max-width: 83.33333333333334%
+            }
+        }</style>
+    <style data-glamor="cxs-md-sheet" type="text/css">
+        @media (min-width: 1024px) {
+            .x ._mdpx_-fs-16 {
+                font-size: 16px
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .x ._mdpx_-d-block {
+                display: block
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .x ._mdpx_-min-height-60vh {
+                min-height: 60vh
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .x ._mdpx_-min-height-50vh {
+                min-height: 50vh
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .x ._mdpx_-flex-grow-1 {
+                flex-grow: 1
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .x ._mdpx_-w-984px {
+                width: 984px
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .x ._mdpx_-d-flex {
+                display: flex
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .x ._mdpx_-fs-30 {
+                font-size: 30px
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .x ._mdpx_-d-none {
+                display: none
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .x ._mdpx_-fs-22 {
+                font-size: 22px
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .x ._mdpx_-justify-content-center {
+                justify-content: center
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .x ._mdpx_-p-40px {
+                padding: 40px
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .x ._mdpx_-h-450px {
+                height: 450px
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .x ._mdpx_-w-450px {
+                width: 450px
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .x ._mdpx_-fs-41 {
+                font-size: 41px
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .x ._mdpx_-text-align-center {
+                text-align: center
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .x ._mdpx_-flex-basis-33p33333333333333P {
+                flex-basis: 33.33333333333333%
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .x ._mdpx_-max-width-33p33333333333333P {
+                max-width: 33.33333333333333%
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .x ._mdpx_-flex-basis-66p66666666666666P {
+                flex-basis: 66.66666666666666%
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .x ._mdpx_-max-width-66p66666666666666P {
+                max-width: 66.66666666666666%
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .x ._mdpx_-flex-basis-0P {
+                flex-basis: 0%
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .x ._mdpx_-max-width-none {
+                max-width: none
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .x ._mdpx_-text-align-left {
+                text-align: left
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .x ._mdpx_-text-align-right {
+                text-align: right
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .x ._mdpx_-mt-0 {
+                margin-top: 0
+            }
+        }
+    </style>
+    <style data-glamor="cxs-lg-sheet" type="text/css">
+        @media (min-width: 1200px) {
+            .x ._lgpx_-fs-16 {
+                font-size: 16px
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .x ._lgpx_-w-1160px {
+                width: 1160px
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .x ._lgpx_-fs-31 {
+                font-size: 31px
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .x ._lgpx_-fs-22 {
+                font-size: 22px
+            }
+        }
+
+        .hover:hover {
+            background-color: #84e184;
+            transition: 1.2s;
+            box-shadow: 5px 5px 7px grey;
+        }
+    </style>
+    <style type="text/css">.page-inner {
+        background-color: rgb(22, 22, 22);
+        min-height: 100vh;
+    }</style>
+
+</head>
+
+<link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+
+<style>
+
+    .marginTB__ {
+        margin-top: 30px;
+        padding-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    .profile-pic {
+        right: 0;
+        width: 50px;
+        height: 50px;
+        overflow: hidden;
+    }
+
+    .img-thumbnail {
+        height: 50px !important;
+    }
+
+    .highlight-pic:hover {
+    }
+</style>
+
+<body>
+
+{% include 'includes/_navbar.html' %}
+
+<div class="main__ x  x-fonts-lato">
+    <div
+            class="layout layout-layout layout-layout-layout-14 locale-en-SG lang-en">
+        <div
+                class="x-el x-el-div x-el px_-letter-spacing-1px px_-text-transform-uppercase px_-bc-rgb255__255__255 px_-w-100P px__CA_div-position-relative px__CA_div-overflow-hidden px__CA_div-m-auto px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux px_-letter-spacing-1px px_-text-transform-uppercase px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux">
+            <div
+                    class="x-el x-el-div page-inner px_-letter-spacing-1px px_-text-transform-uppercase px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux">
+                <div id="038b344a-1cd3-465a-a52b-77dc6719d841" class="widget widget-header widget-header-header-9">
+                    <div
+                            class="x-el x-el-div px_-letter-spacing-1px px_-text-transform-uppercase px_-z-index-1001 px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux">
+                        <div
+                                class="x-el x-el-div x-el x-el widget-header-header-9 px_-letter-spacing-1px px_-text-transform-uppercase px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-aid x-d-ux px_-letter-spacing-1px px_-text-transform-uppercase px_-bc-rgb22__22__22 px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux x-d-aid px_-letter-spacing-1px px_-text-transform-uppercase px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux x-d-aid">
+                            <div>
+                                <section
+                                        class="x-el x-el-section px_-letter-spacing-1px px_-text-transform-uppercase px_-bc-rgb22__22__22 px_-pt-60px px_-pb-60px px_-p-0px__important px_-ff-_Lato___arial__sans-serif px_-fs-16 _xs-onlypx_-pt-40px _xs-onlypx_-pb-40px _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux x-d-aid">
+                                    <div
+                                            class="x-el x-el-div px_-letter-spacing-1px px_-text-transform-uppercase px_-d-none px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-d-block _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux">
+
+                                    </div>
+                                    <div
+                                            class="x-el x-el-div px_-letter-spacing-1px px_-text-transform-uppercase px_-position-relative px_-m-0 px_-w-100P px_-h-auto px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-min-height-60vh _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux">
+                                        <div
+                                                class="x-el x-el-div px_-letter-spacing-1px px_-text-transform-uppercase px_-h-100P px_-w-100P px_-position-absolute px_-top-0 px_-left-0 px_-right-0 px_-bottom-0 px_-d-flex px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux">
+                                            <div
+                                                    class="x-el x-el-div px_-letter-spacing-1px px_-text-transform-uppercase px_-background-position-50p7P_54p35P px_-background-size-cover px_-background-blend-mode-normal px_-background-repeat-no-repeat px_-position-relative px_-w-100P px_-min-height-300 px_-transition-opacity_0p25s__background-size_0p25s__background-position_0p25s px_-bi-url___img1pwsimgpcom_isteam_ip_6f953e8e-3d8b-4559-908e-a0d20d9ad096_661035b2-54bb-43c2-b325-9c49c785b9d0pjpg___cr_t_0P25_l_19p35P25_w_80p65P25_h_80p65P25_rs_w_50_h_50_cg_true_m_cr_w_50_h_50_ax_50p7P25_ay_54p35P25_ px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-min-height-50vh _mdpx_-fs-16 _lgpx_-fs-16 x-d-guac-image x-d-ux x-d-aid x-d-route"
+                                                    style="background-image: url(&quot;//img1.wsimg.com/isteam/ip/6f953e8e-3d8b-4559-908e-a0d20d9ad096/661035b2-54bb-43c2-b325-9c49c785b9d0.jpg/:/cr=t:0%25,l:19.35%25,w:80.65%25,h:80.65%25/rs=w:2260,h:1280,cg:true,m/cr=w:2260,h:1280,ax:50.7%25,ay:54.35%25&quot;);">
+                                                <script>new guacImage('//img1.wsimg.com/isteam/ip/6f953e8e-3d8b-4559-908e-a0d20d9ad096/661035b2-54bb-43c2-b325-9c49c785b9d0.jpg/:/cr=t:0%25,l:19.35%25,w:80.65%25,h:80.65%25/rs=w:{width},h:{height},cg:true,m/cr=w:{width},h:{height},ax:50.7%25,ay:54.35%25', document.getElementById('guacBg7271'), {})</script>
+                                            </div>
+                                        </div>
+                                        <div
+                                                class="x-el x-el-div px_-letter-spacing-1px px_-text-transform-uppercase px_-d-flex px_-align-items-stretch px_-position-relative px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-flex-grow-1 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux">
+                                            <div
+                                                    class="x-el x-el-div px_-letter-spacing-1px px_-text-transform-uppercase px_-d-flex px_-flex-direction-column px_-min-height-300 px_-w-100P px_-bc-transparent px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-min-height-60vh _mdpx_-flex-grow-1 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux x-d-herobg-test">
+                                                <div
+                                                        class="x-el x-el-div px_-letter-spacing-1px px_-text-transform-uppercase px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux">
+                                                    <div
+                                                            class="x-el x-el-div px_-letter-spacing-1px px_-text-transform-uppercase px_-bc-rgba22__22__22__0p9 px_-w-100P px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux">
+                                                        <div
+                                                                class="x-el x-el-div px_-letter-spacing-1px px_-text-transform-uppercase px_-ml-auto px_-mr-auto px_-pl-20px px_-pr-20px px_-max-width-100P px_-pt-15px px_-pb-15px px_-ff-_Lato___arial__sans-serif px_-fs-16 _smpx_-w-728px _mdpx_-w-984px _mdpx_-fs-16 _lgpx_-w-1160px _lgpx_-fs-16 x-d-ux">
+                                                            <nav
+                                                                    class="x-el x-el-nav px_-letter-spacing-1px px_-text-transform-uppercase px_-justify-content-center px_-align-items-center px_-d-none px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-d-flex _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux">
+                                                                <div
+                                                                        class="x-el x-el-div px_-letter-spacing-1px px_-text-transform-uppercase px_-d-inline-block px_-w-auto px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux x-d-aid">
+                                                                    <h3
+                                                                            title="Fitness tracker" href="/"
+                                                                            class="x-el x-el-a px_-letter-spacing-normal px_-text-transform-none px_-overflow-wrap-break-word px_-fs-16 px_-fw-400 px_-c-rgb105__205__60 px_-text-decoration-none px_-d-inline px_-cursor-pointer px_-ff-_Lusitana___Georgia__serif px__hover-c-rgb105__205__60 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux x-d-page"
+                                                                    >
+                                                                        <h3
+                                                                                class="x-el x-el-h3 px_-letter-spacing-1px px_-text-transform-uppercase px_-overflow-wrap-break-word px_-word-wrap-break-word px_-word-break-break-word px_-fs-25 px_-c-rgb105__205__60 px_-fw-400 px_-lh-1p2 px_-ml-0 px_-mr-0 px_-mt-0 px_-mb-0 px_-ff-_Lato___arial__sans-serif px_-text-align-center _mdpx_-fs-30 _lgpx_-fs-31 x-d-ux x-d-route">
+                                                                            Fitness tracker</h3>
+                                                                    </h3>
+                                                                </div>
+                                                            </nav>
+
+                                                            <!--Block for design [black strip]-->
+                                                            <div
+                                                                    class="x-el x-el-div px_-letter-spacing-1px px_-text-transform-uppercase px_-d-block px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-d-none _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux">
+                                                                <!--gridding-->
+                                                                <div
+                                                                        class="x-el x-el-div px_-letter-spacing-1px px_-text-transform-uppercase px_-d-flex px_-box-sizing-border-box px_-flex-direction-row px_-flex-wrap-nowrap px_-m-0_-10px_0 px_-align-items-center px_-text-align-center px_-justify-content-center px_-ff-_Lato___arial__sans-serif px_-fs-16 _smpx_-m-0_-20px_0 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux">
+                                                                    <div
+                                                                            class="x-el x-el-div px_-letter-spacing-1px px_-text-transform-uppercase px_-box-sizing-border-box px_-flex-grow-1 px_-flex-shrink-1 px_-flex-basis-auto px_-p-0_10px_0 px_-text-align-center px_-mr-0 px_-ff-_Lato___arial__sans-serif px_-fs-16 _smpx_-p-0_20px_0 _smpx_-mr-0 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux">
+                                                                        <div
+                                                                                class="x-el x-el-div px_-letter-spacing-1px px_-text-transform-uppercase px_-d-inline-block px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux x-d-aid">
+
+                                                                            <!--Logo heading-->
+                                                                            <h3>
+                                                                                Fitness tracker</h3>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                        class="x-el x-el-div px_-letter-spacing-1px px_-text-transform-uppercase px_-ml-auto px_-mr-auto px_-pl-20px px_-pr-20px px_-max-width-100P px_-ff-_Lato___arial__sans-serif px_-fs-16 _smpx_-w-728px _mdpx_-w-984px _mdpx_-fs-16 _lgpx_-w-1160px _lgpx_-fs-16 x-d-ux">
+                                                    <div
+                                                            class="x-el x-el-div px_-letter-spacing-1px px_-text-transform-uppercase px_-d-flex px_-align-items-center px_-justify-content-center px_-flex-grow-1 px_-text-align-center px_-w-100P px_-mt-60px px_-mb-60px px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-justify-content-center _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux">
+                                                        <div
+                                                                class="x-el x-el-div px_-letter-spacing-1px px_-text-transform-uppercase px_-border-radius-50P px_-bc-rgba105__205__60__0p9 px_-p-12px px_-d-flex px_-align-items-center px_-justify-content-center px_-w-300px px_-h-300px px_-overflow-hidden px_-ff-_Lato___arial__sans-serif px_-fs-16 _xs-onlypx_-w-280px _xs-onlypx_-h-280px _xs-onlypx_-p-30px _xs-onlypx_-overflow-visible _smpx_-h-400px _smpx_-w-400px _smpx_-p-30px _mdpx_-p-40px _mdpx_-h-450px _mdpx_-w-450px _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux hover">
+                                                            <div
+                                                                    class="x-el x-el-div px_-letter-spacing-1px px_-text-transform-uppercase px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux">
+                                                                <h1>
+                                                                    2500</h1>
+                                                                <div
+                                                                        class="x-el x-el-p px_-letter-spacing-normal px_-text-transform-none px_-overflow-wrap-break-word px_-word-wrap-break-word px_-word-break-break-word px_-c-rgb33__37__32 px_-fs-20 px_-fw-400 px_-lh-1p2 px_-mt-0 px_-mb-0 px_-ff-_Lusitana___Georgia__serif px__CA_p-m-0 px_-max-width-100P _xs-onlypx_-fs-20 _mdpx_-fs-22 _lgpx_-fs-22 x-d-ux x-d-aid x-d-route x-rt">
+                                                                    <p style="margin:0">
+                                                                        <span class="font-weight-bold">KCAL LEFT</span>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget widget-about widget-about-about-1">
+                    <div data-ux="Widget"
+                         class="x-el x-el-div x-el widget-about-about-1 px_-letter-spacing-1px px_-text-transform-uppercase px_-bc-rgb255__255__255 px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux px_-letter-spacing-1px px_-text-transform-uppercase px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux">
+                        <div>
+                            <section data-ux="Section"
+                                     class="x-el x-el-section px_-letter-spacing-1px px_-text-transform-uppercase px_-bc-rgb255__255__255 px_-pt-60px px_-pb-60px px_-ff-_Lato___arial__sans-serif px_-fs-16 _xs-onlypx_-pt-40px _xs-onlypx_-pb-40px _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux">
+                                <div data-ux="Container"
+                                     class="x-el x-el-div px_-letter-spacing-1px px_-text-transform-uppercase px_-ml-auto px_-mr-auto px_-pl-20px px_-pr-20px px_-max-width-100P px_-ff-_Lato___arial__sans-serif px_-fs-16 _smpx_-w-728px _mdpx_-w-984px _mdpx_-fs-16 _lgpx_-w-1160px _lgpx_-fs-16 x-d-ux">
+                                    <h2 data-ux="SectionHeading" data-aid="ABOUT_SECTION_TITLE_RENDERED"
+                                        data-route="sectionTitle"
+                                        class="x-el x-el-h2 px_-letter-spacing-1px px_-text-transform-uppercase px_-overflow-wrap-break-word px_-word-wrap-break-word px_-word-break-break-word px_-fs-25 px_-c-rgb67__134__36 px_-fw-400 px_-lh-1p4 px_-ml-0 px_-mr-0 px_-mt-0 px_-mb-40px px_-ff-_Lato___arial__sans-serif px_-overflow-hidden px_-text-align-center _mdpx_-text-align-center _mdpx_-fs-30 _lgpx_-fs-31 x-d-ux x-d-aid x-d-route">
+                                        <span data-ux="Element"
+                                              class="x-el x-el-span px_-letter-spacing-1px px_-text-transform-uppercase px_-d-inline-block px_-position-relative px_-c-inherit px_-max-width-80P px_-ff-_Lato___arial__sans-serif px_-fs-25 px__before-right-100P px__before-mr-20px px__before-content-__ px__before-h-1px px__before-mt--1px px__before-b-currentColor px__before-position-absolute px__before-top-p75em px__before-w-100vw px__before-d-block px__after-left-100P px__after-ml-20px px__after-content-__ px__after-h-1px px__after-mt--1px px__after-b-currentColor px__after-position-absolute px__after-top-p75em px__after-w-100vw px__after-d-block _mdpx_-fs-30 _lgpx_-fs-31 x-d-ux">Nutritional Consumption</span>
+                                    </h2>
+                                    <div data-ux="ContentCards"
+                                         class="x-el x-el-div x-el px_-letter-spacing-1px px_-text-transform-uppercase px_-text-align-center px_-justify-content-center px_-ff-_Lato___arial__sans-serif px_-fs-16 _xs-onlypx__CA__nth-childn-mb-20px _xs-onlypx___CA__last-child-mb-0__important _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux px_-letter-spacing-1px px_-text-transform-uppercase px_-d-flex px_-box-sizing-border-box px_-flex-direction-row px_-flex-wrap-wrap px_-m-0_-10px_-20px px_-ff-_Lato___arial__sans-serif px_-fs-16 _smpx_-m-0_-20px_-40px _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux">
+                                        <div data-ux="GridCell"
+                                             class="x-el x-el-div px_-letter-spacing-1px px_-text-transform-uppercase px_-box-sizing-border-box px_-flex-grow-1 px_-flex-shrink-1 px_-flex-basis-100P px_-p-0_10px_20px px_-max-width-100P px_-d-flex px_-ff-_Lato___arial__sans-serif px_-fs-16 _smpx_-p-0_20px_40px _smpx_-flex-basis-50P _smpx_-max-width-50P _mdpx_-flex-basis-33p33333333333333P _mdpx_-max-width-33p33333333333333P _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux">
+                                            <div data-ux="ContentCard" index="0"
+                                                 class="x-el x-el-div x-el px_-letter-spacing-1px px_-text-transform-uppercase px_-d-flex px_-flex-direction-column px_-align-items-center px_-text-align-center px_-justify-content-center px_-w-100P px__CA_AS-max-width-100P px__CA__nth-childn-mb-20px px___CA__last-child-mb-0__important px_-flex-grow-1 px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux px_-letter-spacing-1px px_-text-transform-uppercase px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux">
+                                                <h4 data-ux="ContentCardHeading" data-aid="ABOUT_HEADLINE_RENDERED0"
+                                                    data-route="cards/0/headline"
+                                                    class="x-el x-el-h4 px_-letter-spacing-normal px_-text-transform-none px_-overflow-wrap-break-word px_-word-wrap-break-word px_-word-break-break-word px_-fs-20 px_-c-rgb27__27__27 px_-fw-400 px_-lh-1p25 px_-ml-0 px_-mr-0 px_-mt-0 px_-mb-0 px_-ff-_Lusitana___Georgia__serif px_-text-align-center px_-align-self-center _mdpx_-fs-22 _lgpx_-fs-22 x-d-ux x-d-aid x-d-route">
+                                                    250 g left | Carbs</h4>
+                                                <!--Content card image-->
+                                                <div
+                                                        class="x-el x-el-div px_-letter-spacing-1px px_-text-transform-uppercase px_-d-inline-block px_-ml-auto px_-mr-auto px_-order--1 px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux x-d-route">
+                                                    <img src="//img1.wsimg.com/isteam/ip/6f953e8e-3d8b-4559-908e-a0d20d9ad096/5b5a8b94-b66d-4362-8dbc-4872277fb85b.jpg/:/cr=t:0%25,l:18.43%25,w:66.25%25,h:100%25/rs=w:223,h:223,cg:true"
+                                                         class="x-el x-el-img px_-letter-spacing-1px px_-text-transform-uppercase px_-max-width-100P px_-w-auto px_-ml-auto px_-mr-auto px_-mt-0 px_-mb-0 px_-border-radius-50P px_-h-auto px_-object-fit-cover px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux x-d-aid">
+                                                </div>
+                                                <div data-ux="ContentCardText" data-aid="ABOUT_DESCRIPTION_RENDERED0"
+                                                     data-route="cards/0/description"
+                                                     class="x-el x-el-p px_-letter-spacing-normal px_-text-transform-none px_-overflow-wrap-break-word px_-word-wrap-break-word px_-word-break-break-word px_-c-rgb94__94__94 px_-fs-16 px_-fw-400 px_-lh-1p5 px_-mt-0 px_-mb-0 px_-ff-_Lusitana___Georgia__serif px__CA_p_CA_ol-text-align-left px__CA_p_CA_ol-d-inline-block px__CA_p_CA_ol-pl-1p3em px__CA_p_CA_ol-ml-30px px__CA_p_CA_ol-mr-30px px__CA_p_CA_ul-text-align-left px__CA_p_CA_ul-d-inline-block px__CA_p_CA_ul-pl-1p3em px__CA_p_CA_ul-ml-30px px__CA_p_CA_ul-mr-30px px__CA_ul-text-align-left px__CA_ul-d-inline-block px__CA_ul-pl-1p3em px__CA_ul-ml-30px px__CA_ul-mr-30px px__CA_ol-text-align-left px__CA_ol-d-inline-block px__CA_ol-pl-1p3em px__CA_ol-ml-30px px__CA_ol-mr-30px px_-flex-grow-1 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux x-d-aid x-d-route x-rt">
+                                                    <p style="margin:0">
+                                                        <span class="x-el x-el-span px_-letter-spacing-normal px_-text-transform-none px_-fs-unset px_-ff-_Lusitana___Georgia__serif px_-fw-700 x-d-ux">Carbohydrates</span>
+                                                        have six major functions within the body: Providing energy and
+                                                        regulation of blood glucose. Sparing the use of proteins for
+                                                        energy.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div
+                                                class="x-el x-el-div px_-letter-spacing-1px px_-text-transform-uppercase px_-box-sizing-border-box px_-flex-grow-1 px_-flex-shrink-1 px_-flex-basis-100P px_-p-0_10px_20px px_-max-width-100P px_-d-flex px_-ff-_Lato___arial__sans-serif px_-fs-16 _smpx_-p-0_20px_40px _smpx_-flex-basis-50P _smpx_-max-width-50P _mdpx_-flex-basis-33p33333333333333P _mdpx_-max-width-33p33333333333333P _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux">
+                                            <div
+                                                    class="x-el x-el-div x-el px_-letter-spacing-1px px_-text-transform-uppercase px_-d-flex px_-flex-direction-column px_-align-items-center px_-text-align-center px_-justify-content-center px_-w-100P px__CA_AS-max-width-100P px__CA__nth-childn-mb-20px px___CA__last-child-mb-0__important px_-flex-grow-1 px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux px_-letter-spacing-1px px_-text-transform-uppercase px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux">
+                                                <h4
+                                                        class="x-el x-el-h4 px_-letter-spacing-normal px_-text-transform-none px_-overflow-wrap-break-word px_-word-wrap-break-word px_-word-break-break-word px_-fs-20 px_-c-rgb27__27__27 px_-fw-400 px_-lh-1p25 px_-ml-0 px_-mr-0 px_-mt-0 px_-mb-0 px_-ff-_Lusitana___Georgia__serif px_-text-align-center px_-align-self-center _mdpx_-fs-22 _lgpx_-fs-22 x-d-ux x-d-aid x-d-route">
+                                                    206g left | Proteins</h4>
+                                                <!--Content card image-->
+                                                <div
+                                                        class="x-el x-el-div px_-letter-spacing-1px px_-text-transform-uppercase px_-d-inline-block px_-ml-auto px_-mr-auto px_-order--1 px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux x-d-route">
+                                                    <img src="//img1.wsimg.com/isteam/ip/6f953e8e-3d8b-4559-908e-a0d20d9ad096/92c5ee9e-094b-4813-9183-448eef2f164a.jpg/:/cr=t:2.32%25,l:0%25,w:100%25,h:66.72%25/rs=w:223,h:223,cg:true"
+                                                         class="x-el x-el-img px_-letter-spacing-1px px_-text-transform-uppercase px_-max-width-100P px_-w-auto px_-ml-auto px_-mr-auto px_-mt-0 px_-mb-0 px_-border-radius-50P px_-h-auto px_-object-fit-cover px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux x-d-aid">
+                                                </div>
+                                                <div
+                                                        class="x-el x-el-p px_-letter-spacing-normal px_-text-transform-none px_-overflow-wrap-break-word px_-word-wrap-break-word px_-word-break-break-word px_-c-rgb94__94__94 px_-fs-16 px_-fw-400 px_-lh-1p5 px_-mt-0 px_-mb-0 px_-ff-_Lusitana___Georgia__serif px__CA_p_CA_ol-text-align-left px__CA_p_CA_ol-d-inline-block px__CA_p_CA_ol-pl-1p3em px__CA_p_CA_ol-ml-30px px__CA_p_CA_ol-mr-30px px__CA_p_CA_ul-text-align-left px__CA_p_CA_ul-d-inline-block px__CA_p_CA_ul-pl-1p3em px__CA_p_CA_ul-ml-30px px__CA_p_CA_ul-mr-30px px__CA_ul-text-align-left px__CA_ul-d-inline-block px__CA_ul-pl-1p3em px__CA_ul-ml-30px px__CA_ul-mr-30px px__CA_ol-text-align-left px__CA_ol-d-inline-block px__CA_ol-pl-1p3em px__CA_ol-ml-30px px__CA_ol-mr-30px px_-flex-grow-1 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux x-d-aid x-d-route x-rt">
+                                                    <p style="margin:0">
+                                                        <span class="x-el x-el-span px_-letter-spacing-normal px_-text-transform-none px_-fs-unset px_-ff-_Lusitana___Georgia__serif px_-fw-700 x-d-ux">Protein</span>
+                                                        is essential for the maintenance and building of body tissues
+                                                        and muscle. Prevent protein deficiency issues.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div
+                                                class="x-el x-el-div px_-letter-spacing-1px px_-text-transform-uppercase px_-box-sizing-border-box px_-flex-grow-1 px_-flex-shrink-1 px_-flex-basis-100P px_-p-0_10px_20px px_-max-width-100P px_-d-flex px_-ff-_Lato___arial__sans-serif px_-fs-16 _smpx_-p-0_20px_40px _smpx_-flex-basis-50P _smpx_-max-width-50P _mdpx_-flex-basis-33p33333333333333P _mdpx_-max-width-33p33333333333333P _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux">
+                                            <div
+                                                    class="x-el x-el-div x-el px_-letter-spacing-1px px_-text-transform-uppercase px_-d-flex px_-flex-direction-column px_-align-items-center px_-text-align-center px_-justify-content-center px_-w-100P px__CA_AS-max-width-100P px__CA__nth-childn-mb-20px px___CA__last-child-mb-0__important px_-flex-grow-1 px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux px_-letter-spacing-1px px_-text-transform-uppercase px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux">
+                                                <h4
+                                                        class="x-el x-el-h4 px_-letter-spacing-normal px_-text-transform-none px_-overflow-wrap-break-word px_-word-wrap-break-word px_-word-break-break-word px_-fs-20 px_-c-rgb27__27__27 px_-fw-400 px_-lh-1p25 px_-ml-0 px_-mr-0 px_-mt-0 px_-mb-0 px_-ff-_Lusitana___Georgia__serif px_-text-align-center px_-align-self-center _mdpx_-fs-22 _lgpx_-fs-22 x-d-ux x-d-aid x-d-route">
+                                                    75g left | Fats</h4>
+                                                <div
+                                                        class="x-el x-el-div px_-letter-spacing-1px px_-text-transform-uppercase px_-d-inline-block px_-ml-auto px_-mr-auto px_-order--1 px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux x-d-route">
+                                                    <img src="//img1.wsimg.com/isteam/ip/6f953e8e-3d8b-4559-908e-a0d20d9ad096/0139ec1b-30a4-4f98-9732-7fe4b03c19af.jpg/:/cr=t:33.32%25,l:0%25,w:100%25,h:66.68%25/rs=w:223,h:223,cg:true"
+                                                         class="x-el x-el-img px_-letter-spacing-1px px_-text-transform-uppercase px_-max-width-100P px_-w-auto px_-ml-auto px_-mr-auto px_-mt-0 px_-mb-0 px_-border-radius-50P px_-h-auto px_-object-fit-cover px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux x-d-aid">
+                                                </div>
+                                                <div
+                                                        class="x-el x-el-p px_-letter-spacing-normal px_-text-transform-none px_-overflow-wrap-break-word px_-word-wrap-break-word px_-word-break-break-word px_-c-rgb94__94__94 px_-fs-16 px_-fw-400 px_-lh-1p5 px_-mt-0 px_-mb-0 px_-ff-_Lusitana___Georgia__serif px__CA_p_CA_ol-text-align-left px__CA_p_CA_ol-d-inline-block px__CA_p_CA_ol-pl-1p3em px__CA_p_CA_ol-ml-30px px__CA_p_CA_ol-mr-30px px__CA_p_CA_ul-text-align-left px__CA_p_CA_ul-d-inline-block px__CA_p_CA_ul-pl-1p3em px__CA_p_CA_ul-ml-30px px__CA_p_CA_ul-mr-30px px__CA_ul-text-align-left px__CA_ul-d-inline-block px__CA_ul-pl-1p3em px__CA_ul-ml-30px px__CA_ul-mr-30px px__CA_ol-text-align-left px__CA_ol-d-inline-block px__CA_ol-pl-1p3em px__CA_ol-ml-30px px__CA_ol-mr-30px px_-flex-grow-1 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux x-d-aid x-d-route x-rt">
+                                                    <p style="margin:0">
+                                                        <span class="x-el x-el-span px_-letter-spacing-normal px_-text-transform-none px_-fs-unset px_-ff-_Lusitana___Georgia__serif px_-fw-700 x-d-ux">Fats </span>acts
+                                                        as a backup source of energy, absorption for fat-soluble
+                                                        vitamins, insulation to temperature, increasing testoterone.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget widget-content widget-content-content-1">
+                    <div
+                            class="x-el x-el-div x-el widget-content-content-1 px_-letter-spacing-1px px_-text-transform-uppercase px_-bc-rgb246__246__246 px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux px_-letter-spacing-1px px_-text-transform-uppercase px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux">
+                        <div>
+                            <section
+                                    class="x-el x-el-section px_-letter-spacing-1px px_-text-transform-uppercase px_-bc-rgb246__246__246 px_-pt-60px px_-pb-60px px_-ff-_Lato___arial__sans-serif px_-fs-16 _xs-onlypx_-pt-40px _xs-onlypx_-pb-40px _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux">
+                                <div
+                                        class="x-el x-el-div px_-letter-spacing-1px px_-text-transform-uppercase px_-ml-auto px_-mr-auto px_-pl-20px px_-pr-20px px_-max-width-100P px_-ff-_Lato___arial__sans-serif px_-fs-16 _smpx_-w-728px _mdpx_-w-984px _mdpx_-fs-16 _lgpx_-w-1160px _lgpx_-fs-16 x-d-ux">
+                                    <!--Heading for meal section-->
+                                    <h2
+                                            class="x-el x-el-h2 px_-letter-spacing-1px px_-text-transform-uppercase px_-overflow-wrap-break-word px_-word-wrap-break-word px_-word-break-break-word px_-fs-25 px_-c-rgb62__126__33 px_-fw-400 px_-lh-1p4 px_-ml-0 px_-mr-0 px_-mt-0 px_-mb-40px px_-ff-_Lato___arial__sans-serif px_-overflow-hidden px_-text-align-center _mdpx_-text-align-center _mdpx_-fs-30 _lgpx_-fs-31 x-d-ux x-d-aid x-d-route">
+                                        <span
+                                                class="x-el x-el-span px_-letter-spacing-1px px_-text-transform-uppercase px_-d-inline-block px_-position-relative px_-c-inherit px_-max-width-80P px_-ff-_Lato___arial__sans-serif px_-fs-25 px__before-right-100P px__before-mr-20px px__before-content-__ px__before-h-1px px__before-mt--1px px__before-b-currentColor px__before-position-absolute px__before-top-p75em px__before-w-100vw px__before-d-block px__after-left-100P px__after-ml-20px px__after-content-__ px__after-h-1px px__after-mt--1px px__after-b-currentColor px__after-position-absolute px__after-top-p75em px__after-w-100vw px__after-d-block _mdpx_-fs-30 _lgpx_-fs-31 x-d-ux">Meals</span>
+                                    </h2>
+                                    <div
+                                            class="x-el x-el-div px_-letter-spacing-1px px_-text-transform-uppercase px_-d-flex px_-box-sizing-border-box px_-flex-direction-row px_-flex-wrap-wrap px_-m-0_-10px_0 px_-text-align-left px_-justify-content-center px_-ff-_Lato___arial__sans-serif px_-fs-16 _smpx_-m-0_-20px_0 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux">
+                                        <div
+                                                class="x-el x-el-div px_-letter-spacing-1px px_-text-transform-uppercase px_-box-sizing-border-box px_-flex-grow-1 px_-flex-shrink-1 px_-flex-basis-100P px_-p-0_10px_0 px_-max-width-100P px__CA__nth-childn-mb-30px px___CA__last-child-mb-0__important px_-ff-_Lato___arial__sans-serif px_-fs-16 _smpx_-p-0_20px_0 _smpx_-flex-basis-83p33333333333334P _smpx_-max-width-83p33333333333334P _mdpx_-flex-basis-66p66666666666666P _mdpx_-max-width-66p66666666666666P _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux">
+                                            <div
+                                                    class="x-el x-el-div x-el px_-letter-spacing-1px px_-text-transform-uppercase px_-d-flex px_-flex-direction-column px_-w-100P px__CA_AS-max-width-100P px_-align-items-flex-start px_-text-align-left px__CA__nth-childn-mb-20px px___CA__last-child-mb-0__important px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux px_-letter-spacing-1px px_-text-transform-uppercase px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux">
+                                                <h4
+                                                        class="x-el x-el-h4 px_-letter-spacing-normal px_-text-transform-none px_-overflow-wrap-break-word px_-word-wrap-break-word px_-word-break-break-word px_-fs-20 px_-c-rgb21__21__21 px_-fw-400 px_-lh-1p25 px_-ml-0 px_-mr-0 px_-mt-0 px_-mb-0 px_-ff-_Lusitana___Georgia__serif _mdpx_-fs-22 _lgpx_-fs-22 x-d-ux x-d-route x-d-aid">
+                                                    Breakfast</h4>
+                                                <div
+                                                        class="x-el x-el-p px_-letter-spacing-normal px_-text-transform-none px_-overflow-wrap-break-word px_-word-wrap-break-word px_-word-break-break-word px_-c-rgb87__87__87 px_-fs-16 px_-fw-400 px_-lh-1p5 px_-mt-0 px_-mb-0 px_-ff-_Lusitana___Georgia__serif px__CA_p_CA_ol-text-align-left px__CA_p_CA_ol-d-inline-block px__CA_p_CA_ol-pl-1p3em px__CA_p_CA_ol-ml-30px px__CA_p_CA_ol-mr-30px px__CA_p_CA_ul-text-align-left px__CA_p_CA_ul-d-inline-block px__CA_p_CA_ul-pl-1p3em px__CA_p_CA_ul-ml-30px px__CA_p_CA_ul-mr-30px px__CA_ul-text-align-left px__CA_ul-d-inline-block px__CA_ul-pl-1p3em px__CA_ul-ml-30px px__CA_ul-mr-30px px__CA_ol-text-align-left px__CA_ol-d-inline-block px__CA_ol-pl-1p3em px__CA_ol-ml-30px px__CA_ol-mr-30px _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux x-d-aid x-d-route x-rt">
+                                                    <p style="margin:0"></p>
+                                                    <ul>
+                                                        <li>List</li>
+                                                    </ul>
+                                                    <p></p></div>
+                                                <!--Buttons to add meal and exercises-->
+                                                <button type="button"
+                                                        class="btn btn-success">
+                                                    Add your meal
+
+                                                </button>
+                                            </div>
+                                            <div
+                                                    class="x-el x-el-div x-el px_-letter-spacing-1px px_-text-transform-uppercase px_-d-flex px_-flex-direction-column px_-w-100P px__CA_AS-max-width-100P px_-align-items-flex-start px_-text-align-left px__CA__nth-childn-mb-20px px___CA__last-child-mb-0__important px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux px_-letter-spacing-1px px_-text-transform-uppercase px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux">
+                                                <h4
+                                                        class="x-el x-el-h4 px_-letter-spacing-normal px_-text-transform-none px_-overflow-wrap-break-word px_-word-wrap-break-word px_-word-break-break-word px_-fs-20 px_-c-rgb21__21__21 px_-fw-400 px_-lh-1p25 px_-ml-0 px_-mr-0 px_-mt-0 px_-mb-0 px_-ff-_Lusitana___Georgia__serif _mdpx_-fs-22 _lgpx_-fs-22 x-d-ux x-d-route x-d-aid">
+                                                    Lunch</h4>
+                                                <div
+                                                        class="x-el x-el-p px_-letter-spacing-normal px_-text-transform-none px_-overflow-wrap-break-word px_-word-wrap-break-word px_-word-break-break-word px_-c-rgb87__87__87 px_-fs-16 px_-fw-400 px_-lh-1p5 px_-mt-0 px_-mb-0 px_-ff-_Lusitana___Georgia__serif px__CA_p_CA_ol-text-align-left px__CA_p_CA_ol-d-inline-block px__CA_p_CA_ol-pl-1p3em px__CA_p_CA_ol-ml-30px px__CA_p_CA_ol-mr-30px px__CA_p_CA_ul-text-align-left px__CA_p_CA_ul-d-inline-block px__CA_p_CA_ul-pl-1p3em px__CA_p_CA_ul-ml-30px px__CA_p_CA_ul-mr-30px px__CA_ul-text-align-left px__CA_ul-d-inline-block px__CA_ul-pl-1p3em px__CA_ul-ml-30px px__CA_ul-mr-30px px__CA_ol-text-align-left px__CA_ol-d-inline-block px__CA_ol-pl-1p3em px__CA_ol-ml-30px px__CA_ol-mr-30px _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux x-d-aid x-d-route x-rt">
+                                                    <p style="margin:0"></p>
+                                                    <ul>
+                                                        <li>List</li>
+                                                    </ul>
+                                                    <p></p></div>
+                                                <button type="button"
+                                                        class="btn btn-success">
+                                                    Add your meal
+                                                </button>
+                                            </div>
+                                            <div
+                                                    class="x-el x-el-div x-el px_-letter-spacing-1px px_-text-transform-uppercase px_-d-flex px_-flex-direction-column px_-w-100P px__CA_AS-max-width-100P px_-align-items-flex-start px_-text-align-left px__CA__nth-childn-mb-20px px___CA__last-child-mb-0__important px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux px_-letter-spacing-1px px_-text-transform-uppercase px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux">
+                                                <h4
+                                                        class="x-el x-el-h4 px_-letter-spacing-normal px_-text-transform-none px_-overflow-wrap-break-word px_-word-wrap-break-word px_-word-break-break-word px_-fs-20 px_-c-rgb21__21__21 px_-fw-400 px_-lh-1p25 px_-ml-0 px_-mr-0 px_-mt-0 px_-mb-0 px_-ff-_Lusitana___Georgia__serif _mdpx_-fs-22 _lgpx_-fs-22 x-d-ux x-d-route x-d-aid">
+                                                    Dinner</h4>
+                                                <div
+                                                        class="x-el x-el-p px_-letter-spacing-normal px_-text-transform-none px_-overflow-wrap-break-word px_-word-wrap-break-word px_-word-break-break-word px_-c-rgb87__87__87 px_-fs-16 px_-fw-400 px_-lh-1p5 px_-mt-0 px_-mb-0 px_-ff-_Lusitana___Georgia__serif px__CA_p_CA_ol-text-align-left px__CA_p_CA_ol-d-inline-block px__CA_p_CA_ol-pl-1p3em px__CA_p_CA_ol-ml-30px px__CA_p_CA_ol-mr-30px px__CA_p_CA_ul-text-align-left px__CA_p_CA_ul-d-inline-block px__CA_p_CA_ul-pl-1p3em px__CA_p_CA_ul-ml-30px px__CA_p_CA_ul-mr-30px px__CA_ul-text-align-left px__CA_ul-d-inline-block px__CA_ul-pl-1p3em px__CA_ul-ml-30px px__CA_ul-mr-30px px__CA_ol-text-align-left px__CA_ol-d-inline-block px__CA_ol-pl-1p3em px__CA_ol-ml-30px px__CA_ol-mr-30px _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux x-d-aid x-d-route x-rt">
+                                                    <p style="margin:0"></p>
+                                                    <ul>
+                                                        <li>List</li>
+                                                    </ul>
+                                                    <p></p></div>
+                                                <button type="button"
+                                                        class="btn btn-success">
+                                                    Add your meal
+                                                </button>
+                                            </div>
+                                            <div
+                                                    class="x-el x-el-div x-el px_-letter-spacing-1px px_-text-transform-uppercase px_-d-flex px_-flex-direction-column px_-w-100P px__CA_AS-max-width-100P px_-align-items-flex-start px_-text-align-left px__CA__nth-childn-mb-20px px___CA__last-child-mb-0__important px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux px_-letter-spacing-1px px_-text-transform-uppercase px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux">
+                                                <h4
+                                                        class="x-el x-el-h4 px_-letter-spacing-normal px_-text-transform-none px_-overflow-wrap-break-word px_-word-wrap-break-word px_-word-break-break-word px_-fs-20 px_-c-rgb21__21__21 px_-fw-400 px_-lh-1p25 px_-ml-0 px_-mr-0 px_-mt-0 px_-mb-0 px_-ff-_Lusitana___Georgia__serif _mdpx_-fs-22 _lgpx_-fs-22 x-d-ux x-d-route x-d-aid">
+                                                    Snacks</h4>
+                                                <div
+                                                        class="x-el x-el-p px_-letter-spacing-normal px_-text-transform-none px_-overflow-wrap-break-word px_-word-wrap-break-word px_-word-break-break-word px_-c-rgb87__87__87 px_-fs-16 px_-fw-400 px_-lh-1p5 px_-mt-0 px_-mb-0 px_-ff-_Lusitana___Georgia__serif px__CA_p_CA_ol-text-align-left px__CA_p_CA_ol-d-inline-block px__CA_p_CA_ol-pl-1p3em px__CA_p_CA_ol-ml-30px px__CA_p_CA_ol-mr-30px px__CA_p_CA_ul-text-align-left px__CA_p_CA_ul-d-inline-block px__CA_p_CA_ul-pl-1p3em px__CA_p_CA_ul-ml-30px px__CA_p_CA_ul-mr-30px px__CA_ul-text-align-left px__CA_ul-d-inline-block px__CA_ul-pl-1p3em px__CA_ul-ml-30px px__CA_ul-mr-30px px__CA_ol-text-align-left px__CA_ol-d-inline-block px__CA_ol-pl-1p3em px__CA_ol-ml-30px px__CA_ol-mr-30px _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux x-d-aid x-d-route x-rt">
+                                                    <p style="margin:0"></p>
+                                                    <ul>
+                                                        <li>List</li>
+                                                    </ul>
+                                                    <p></p></div>
+                                                <button type="button"
+                                                        class="btn btn-success">
+                                                    Add your meal
+                                                </button>
+                                            </div>
+                                            <div
+                                                    class="x-el x-el-div x-el px_-letter-spacing-1px px_-text-transform-uppercase px_-d-flex px_-flex-direction-column px_-w-100P px__CA_AS-max-width-100P px_-align-items-flex-start px_-text-align-left px__CA__nth-childn-mb-20px px___CA__last-child-mb-0__important px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux px_-letter-spacing-1px px_-text-transform-uppercase px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux">
+                                                <h4
+                                                        class="x-el x-el-h4 px_-letter-spacing-normal px_-text-transform-none px_-overflow-wrap-break-word px_-word-wrap-break-word px_-word-break-break-word px_-fs-20 px_-c-rgb21__21__21 px_-fw-400 px_-lh-1p25 px_-ml-0 px_-mr-0 px_-mt-0 px_-mb-0 px_-ff-_Lusitana___Georgia__serif _mdpx_-fs-22 _lgpx_-fs-22 x-d-ux x-d-route x-d-aid">
+                                                    Exercise</h4>
+                                                <div
+                                                        class="x-el x-el-p px_-letter-spacing-normal px_-text-transform-none px_-overflow-wrap-break-word px_-word-wrap-break-word px_-word-break-break-word px_-c-rgb87__87__87 px_-fs-16 px_-fw-400 px_-lh-1p5 px_-mt-0 px_-mb-0 px_-ff-_Lusitana___Georgia__serif px__CA_p_CA_ol-text-align-left px__CA_p_CA_ol-d-inline-block px__CA_p_CA_ol-pl-1p3em px__CA_p_CA_ol-ml-30px px__CA_p_CA_ol-mr-30px px__CA_p_CA_ul-text-align-left px__CA_p_CA_ul-d-inline-block px__CA_p_CA_ul-pl-1p3em px__CA_p_CA_ul-ml-30px px__CA_p_CA_ul-mr-30px px__CA_ul-text-align-left px__CA_ul-d-inline-block px__CA_ul-pl-1p3em px__CA_ul-ml-30px px__CA_ul-mr-30px px__CA_ol-text-align-left px__CA_ol-d-inline-block px__CA_ol-pl-1p3em px__CA_ol-ml-30px px__CA_ol-mr-30px _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux x-d-aid x-d-route x-rt">
+                                                    <p style="margin:0"></p>
+                                                    <ul>
+                                                        <li>List</li>
+                                                    </ul>
+                                                    <p></p></div>
+                                                <button type="button"
+                                                        class="btn btn-danger">
+                                                    Add your exercise
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget widget-footer widget-footer-footer-2">
+                    <div
+                            class="x-el x-el-div x-el widget-footer-footer-2 px_-letter-spacing-1px px_-text-transform-uppercase px_-bc-rgb22__22__22 px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux px_-letter-spacing-1px px_-text-transform-uppercase px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux">
+                        <div>
+                            <section
+                                    class="x-el x-el-section px_-letter-spacing-1px px_-text-transform-uppercase px_-bc-rgb22__22__22 px_-pt-60px px_-pb-60px px_-ff-_Lato___arial__sans-serif px_-fs-16 _xs-onlypx_-pt-40px _xs-onlypx_-pb-40px _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux">
+                                <div
+                                        class="x-el x-el-div px_-letter-spacing-1px px_-text-transform-uppercase px_-ml-auto px_-mr-auto px_-pl-20px px_-pr-20px px_-max-width-100P px_-ff-_Lato___arial__sans-serif px_-fs-16 _smpx_-w-728px _mdpx_-w-984px _mdpx_-fs-16 _lgpx_-w-1160px _lgpx_-fs-16 x-d-ux">
+                                    <div
+                                            class="x-el x-el-div px_-letter-spacing-1px px_-text-transform-uppercase px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux">
+                                        <div
+                                                class="x-el x-el-div px_-letter-spacing-1px px_-text-transform-uppercase px_-d-flex px_-box-sizing-border-box px_-flex-direction-row px_-flex-wrap-wrap px_-m-0 px_-align-items-center px_-text-align-center px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux">
+                                            <div
+                                                    class="x-el x-el-div px_-letter-spacing-1px px_-text-transform-uppercase px_-box-sizing-border-box px_-flex-grow-1 px_-flex-shrink-1 px_-flex-basis-100P px_-p-0 px_-max-width-100P px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-flex-basis-0P _mdpx_-max-width-none _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux">
+                                                <h5
+                                                        class="x-el x-el-h5 px_-letter-spacing-normal px_-text-transform-none px_-overflow-wrap-break-word px_-word-wrap-break-word px_-word-break-break-word px_-fs-16 px_-c-rgb247__247__247 px_-fw-400 px_-lh-1p25 px_-ml-0 px_-mr-0 px_-mt-0 px_-mb-0 px_-ff-_Lusitana___Georgia__serif _mdpx_-text-align-left _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux x-d-aid x-d-route x-rt">
+                                                    <span style="margin:0">Copyright © 2018 Fitness tracker - All Rights Reserved.</span>
+                                                </h5></div>
+                                            <div
+                                                    class="x-el x-el-div px_-letter-spacing-1px px_-text-transform-uppercase px_-box-sizing-border-box px_-flex-grow-1 px_-flex-shrink-1 px_-flex-basis-100P px_-p-0 px_-max-width-100P px_-ff-_Lato___arial__sans-serif px_-fs-16 _mdpx_-flex-basis-0P _mdpx_-max-width-none _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux">
+                                                <h5
+                                                        class="x-el x-el-h5 px_-letter-spacing-normal px_-text-transform-none px_-overflow-wrap-break-word px_-word-wrap-break-word px_-word-break-break-word px_-fs-16 px_-c-rgb137__137__137 px_-fw-400 px_-lh-1p25 px_-ml-0 px_-mr-0 px_-mt-20px px_-mb-0 px_-ff-_Lusitana___Georgia__serif _mdpx_-text-align-right _mdpx_-mt-0 _mdpx_-fs-16 _lgpx_-fs-16 x-d-ux x-d-aid x-d-route">
+                                                    <span>-HealthFit</span></h5></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+

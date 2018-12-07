@@ -179,6 +179,10 @@ def schedule():
 def HealthTracker():
     return render_template('HealthTracker.html')
 
+@app.route('/fitness')
+def fitness():
+    return render_template('fitness.html')
+
 if __name__ == "__main__":
     app.secret_key='secret123'
     app.debug = True
