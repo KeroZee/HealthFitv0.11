@@ -12,27 +12,6 @@
 </head>
 <body style="background-image: url('../static/e5WlXi.jpg');">
     <div id="page" class="container">
-        <!--<div>-->
-            <!--<nav class="navbar navbar-expand-sm bg-light justify-content-center">-->
-                <!--<ul class="navbar-nav">-->
-                <!--<li class="nav-item">-->
-                  <!--<a class="nav-link" href="/home">Home</a>-->
-                <!--</li>-->
-                <!--<li class="nav-item">-->
-                  <!--<a class="nav-link" href="#">Schedule</a>-->
-                <!--</li>-->
-                <!--<li class="nav-item">-->
-                  <!--<a class="nav-link" href="/ExGuide">Exercise Guide</a>-->
-                <!--</li>-->
-                  <!--<li class="nav-item">-->
-                  <!--<a class="nav-link" href="#">Fitness Tracker</a>-->
-                <!--</li>-->
-                  <!--<li class="nav-item">-->
-                  <!--<a class="nav-link" href="#">Health Tracker</a>-->
-                <!--</li>-->
-                <!--</ul>-->
-              <!--</nav>-->
-        <!--</div>-->
         {% include 'includes/navbar.html' %}
         <div class='container'>
             <div>
@@ -43,21 +22,21 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-6">
-                                <img style="width: 330px; height: 258px;" src="https://cdn-ami-drupal.heartyhosting.com/sites/muscleandfitness.com/files/styles/full_node_image_1090x614/public/media/1109-pushups_0.jpg?itok=QyFVWqN6">
+                                <img style="width: 330px; height: 258px;" src="{{ exercise.get_image() }}">
                             </div>
                             <div class="col-md-6">
-                                <p class="text-justify desc">A push-up is a common exercise that involves beginning from the prone position,
-                                then raising and lowering the body using the arms.</p>
+                                <p class="text-justify desc">{{ exercise.get_desc() }}</p>
                                 <dl>
                                     <dt>Muscles Trained:</dt>
-                                    <dd>-Pectoral Muscles</dd>
-                                    <dd>-Triceps</dd>
+                                    <dd>{{ exercise.get_benefits() }}</dd>
                                 </dl>
-                                <a href="#pushup" class="btn btn-info" data-toggle="collapse">Show more</a>
-                                <div id="pushup" class="collapse">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                <a href="#randex" class="btn btn-info" data-toggle="collapse">Instructions</a>
+                                <div id="randex" class="collapse">
+                                    <ol type="1">
+                                        {% for steps in exercise.get_steps() %}
+                                            <li>{{ steps }}</li>
+                                        {% endfor %}
+                                    </ol>
                                 </div>
                             </div>
                         </div>
@@ -67,20 +46,21 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-6">
-                                <img style="width: 330px; height: 258px;" src="https://cdn2.coachmag.co.uk/sites/coachmag/files/styles/16x9_480/public/images/dir_30/mens_fitness_15427.jpg?itok=T3OF7wPv&timestamp=1369282187">
+                                <img style="width: 330px; height: 258px;" src="{{ exercise1.get_image() }}">
                             </div>
                             <div class="col-md-6">
-                                <p class="text-justify desc">Crunching is an exercise that involves lying face-up on the floor,
-                                bending the knees then curling the shoulders towards the waist.</p>
+                                <p class="text-justify desc">{{ exercise1.get_desc() }}</p>
                                 <dl>
                                     <dt>Muscles trained:</dt>
-                                    <dd>-Abdominal muscles</dd>
+                                    <dd>{{ exercise1.get_benefits() }}</dd>
                                 </dl>
-                                <a href="#crunch" class="btn btn-info" data-toggle="collapse">Show more</a>
-                                <div id="crunch" class="collapse">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                <a href="#randex1" class="btn btn-info" data-toggle="collapse">Instructions</a>
+                                <div id="randex1" class="collapse">
+                                    <ol type="1">
+                                        {% for steps in exercise1.get_steps() %}
+                                            <li>{{ steps }}</li>
+                                        {% endfor %}
+                                    </ol>
                                 </div>
                             </div>
                         </div>
@@ -90,97 +70,21 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-6">
-                                <img style="width: 330px; height: 258px;" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/1104-jumping-jacks-1441032989.jpg">
+                                <img style="width: 330px; height: 258px;" src="{{ exercise2.get_image() }}">
                             </div>
                             <div class="col-md-6">
-                                <p class="text-justify desc">Jumping Jacks is an exercise that involves jumping with the legs spread
-                                wide and hands touching overhead then returning to a position with the feet together and arms at the sides.</p>
+                                <p class="text-justify desc">{{ exercise2.get_desc() }}</p>
                                 <dl>
                                     <dt>Muscles trained:</dt>
-                                    <dd>-Calve muscles</dd>
-                                    <dd>-Shoulder muscles</dd>
-                                    <dd>-Hip muscles</dd>
+                                    <dd>{{ exercise2.get_benefits() }}</dd>
                                 </dl>
-                                <a href="#jumpjack" class="btn btn-info" data-toggle="collapse">Show more</a>
-                                <div id="jumpjack" class="collapse">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="jumbotron" id="no4">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <img style="width: 330px; height: 258px;" src="http://fitmw.com/wp-content/uploads/2015/07/Exercises-Tuck-Jump.jpg">
-                            </div>
-                            <div class="col-md-6">
-                                <p class="text-justify desc">Tuck jumping is an exercise that involves standing in a shoulder width position,
-                                 slowly descending into a squat and use your feet to explode off the floor while driving your knees towards your chest.</p>
-                                <dl>
-                                    <dt>Muscles trained:</dt>
-                                    <dd>-Abdominal muscles</dd>
-                                    <dd>-Hamstrings</dd>
-                                    <dd>-Calve muscles</dd>
-                                </dl>
-                                <a href="#tuckjump" class="btn btn-info" data-toggle="collapse">Show more</a>
-                                <div id="tuckjump" class="collapse">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="jumbotron" id="no5">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <img style="width: 330px; height: 258px;" src="https://19jkon2dxx3g14btyo2ec2u9-wpengine.netdna-ssl.com/wp-content/uploads/2013/11/squats.jpg">
-                            </div>
-                            <div class="col-md-6">
-                                <p class="text-justify desc">Squatting is an exercise that involves standing in a shoulder width position,
-                                    bending your knees all the way down and then explode back up to standing.</p>
-                                <dl>
-                                    <dt>Muscles trained:</dt>
-                                    <dd>-Hip muscles</dd>
-                                    <dd>-Hamstrings</dd>
-                                    <dd>-Quads</dd>
-                                </dl>
-                                <a href="#squats" class="btn btn-info" data-toggle="collapse">Show more</a>
-                                <div id="squats" class="collapse">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="jumbotron" id="no6">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <img style="width: 330px; height: 258px;" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/766/these-are-the-hardest-abs-moves-youll-ever-do-ss-flutter-kicks-1508878279.jpg?resize=480:*">
-                            </div>
-                            <div class="col-md-6">
-                                <p class="text-justify desc">Flutter kicks is an exercise that involves lying down face-up, straightening your legs until they are level
-                                    with your hips and alternating between lifting each leg.</p>
-                                <dl>
-                                    <dt>Muscles trained:</dt>
-                                    <dd>-Abdominal muscles</dd>
-                                    <dd>-Quads</dd>
-                                    <dd>-Hip muscles</dd>
-                                </dl>
-                                <a href="#flutter" class="btn btn-info" data-toggle="collapse">Show more</a>
-                                <div id="flutter" class="collapse">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                <a href="#randex2" class="btn btn-info" data-toggle="collapse">Instructions</a>
+                                <div id="randex2" class="collapse">
+                                    <ol type="1">
+                                        {% for steps in exercise2.get_steps() %}
+                                            <li>{{ steps }}</li>
+                                        {% endfor %}
+                                    </ol>
                                 </div>
                             </div>
                         </div>
@@ -192,7 +96,5 @@
     <!-- jQuery first, then Bootstrap JS. -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
-    <!-- ExGuide Javascript -->
-    <script src="../static/ExScript.js"></script>
 </body>
 </html>
