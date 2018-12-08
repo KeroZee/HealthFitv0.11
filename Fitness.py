@@ -96,4 +96,5 @@ class YourPlan:
     def set_maintenance(self, maintenance):
         self.__maintenance = maintenance
 
+
 # get all info with this class and store into database
