@@ -1,14 +1,9 @@
 # import personalDetails (weight, height)
-weight = int(input("weight:"))
-height = float(input("height:"))
-
 
 def bmi():
     bodyMassIndex = weight / (height ** 2)
     return bodyMassIndex
 
-
-bmi()
 # in webapp, nChoice not available. Definition will be available through hover
 
 
@@ -48,9 +43,6 @@ def category():
 # store nutritionPlan in database
 
 
-category()
-
-
 def macronutrient_measured_per_gram():
     protein = 4
     protein_intake = weight * 1.4
@@ -58,16 +50,9 @@ def macronutrient_measured_per_gram():
     fat = 9
 
 
-macronutrient_measured_per_gram()
-
-
 def maintenanceNutrition():
     # https://jcdfitness.com/calorie-intake-calculator/#calculator
     calories = int(input("Input the calculated calories"))
-
-
-maintenanceNutrition()
-
 
 # def bulk():
 #     35% of calories from protein, 45% of calories from carb, 20% of calories from fat
@@ -95,6 +80,17 @@ class YourPlan:
 
     def set_maintenance(self, maintenance):
         self.__maintenance = maintenance
+
+
+class Record:
+    def __init__(self, record):
+        self.__record = record
+
+    def get_record(self):
+        return self.__record
+
+    def set_record(self, record):
+        self.__record = record
 
 
 # get all info with this class and store into database

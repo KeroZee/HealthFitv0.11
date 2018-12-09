@@ -5,6 +5,8 @@ from passlib.hash import sha256_crypt
 from functools import wraps
 from random import randint
 from Exercises import Exercises
+from Fitness import Record, YourPlan
+
 app = Flask(__name__)
 
 #Config MySQL
@@ -231,7 +233,9 @@ def HealthTracker():
 
 @app.route('/fitness')
 def fitness():
-    return render_template('fitness.html')
+    r1 = Record('food1')
+    p1 = YourPlan('2500', 'bulk')
+    return render_template('fitness.html', items=r1, kcal=p1)
 
 if __name__ == "__main__":
     app.secret_key='secret123'
