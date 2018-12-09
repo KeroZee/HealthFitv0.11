@@ -6,6 +6,25 @@
  */
 /*auto CSS bootstrap theme*/
 
+.circle {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  font-size: 20px;
+  background: rgba(105, 205, 60, 1);
+  vertical-align: middle;
+  display: table-cell;
+  text-align:center;
+  background:linear-gradient(to bottom, #1aff8c, #00e673, #00cc66);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+#wrapper {
+  width: 300px;     /* specify a width! */
+  margin: 0 auto; /* center */
+}
+
 .page-inner {
     background-color: rgb(22, 22, 22);
     min-height: 100vh;
@@ -15,6 +34,14 @@
     .x ._lgpx_-fs-16 {
         font-size: 16px
     }
+}
+
+rcorners1 {
+  border-radius: 25px;
+  background: #73AD21;
+  padding: 20px;
+  width: 200px;
+  height: 150px;
 }
 
 @media (min-width: 1200px) {
