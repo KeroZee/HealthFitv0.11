@@ -1,1 +1,42 @@
-home
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<html>
+<head>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+<hr class="">
+<div class="container target">
+    <div class="row">
+        <div class="col-sm-10">
+             <h1 class="">{{session.username}}</h1>
+
+          <button type="button" class="btn btn-warning">Edit Profile</button>  <button type="button" class="btn btn-success">Access Calendar</button>
+<br>
+        </div>
+      <div class="col-sm-2"><a href="/users" class="pull-sright"><img title="profile image" class="img-circle img-responsive" src="https://via.placeholder.com/300"></a>
+
+        </div>
+    </div>
+  <br>
+    <div class="row">
+        <div class="col-sm-3">
+            <!--left col-->
+            <ul class="list-group">
+                {% for data in datas %}
+                <li class="list-group-item text-muted" contenteditable="false">Profile</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Name: </strong></span>{{data.name}}</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Email: </strong></span>{{data.email}}</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Age: </strong></span>{{data.age}}</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Sex: </strong></span>{{data.gender}}</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Bio: </strong></span>{{data.bio}}</li>
+                {% endfor %}
+            </ul>
+</div>
+</body>
+</html>
+{% endblock %}

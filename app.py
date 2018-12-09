@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, flash, redirect, url_for, session, logging
 from flask_mysqldb import MySQL
-from wtforms import Form, StringField, IntegerField, FloatField, TextAreaField, PasswordField, validators
+from wtforms import Form, StringField, RadioField, IntegerField, FloatField, TextAreaField, PasswordField, validators
 from passlib.hash import sha256_crypt
 from functools import wraps
 app = Flask(__name__)
@@ -33,7 +33,18 @@ def home():
 @app.route("/profile")
 @is_logged_in
 def profile():
-    return render_template("profile.html")
+    #Create cursor
+    cur = mysql.connection.cursor()
+
+    #Get profile data
+    cur.execute("SELECT * FROM users")
+
+    data = cur.fetchall()
+
+    return render_template('profile.html', datas = data)
+
+    cur.close()
+
 
 class RegisterForm(Form):
     name = StringField('Name', [validators.Length(min=1, max=50)])
@@ -46,6 +57,8 @@ class RegisterForm(Form):
     confirm = PasswordField('Confirm Password')
     weight = IntegerField('Weight (KG)')
     height = FloatField('Height (M)')
+    gender = RadioField('Gender',choices = [('M','Male'),('F','Female')])
+    age = IntegerField('Age')
 
 @app.route('/register', methods=['GET','POST'])
 def register():
@@ -57,13 +70,15 @@ def register():
         password = sha256_crypt.encrypt(form.password.data) #sha256 is to encrypt pw
         weight = form.weight.data
         height = form.height.data
+        gender = form.gender.data
+        age = form.age.data
 
 
         #Create cursor
         cur = mysql.connection.cursor()
 
         #Execute query
-        cur.execute("INSERT INTO users(name, email, username, password, weight, height) VALUES(%s, %s, %s, %s, %s, %s)", (name, email, username, password, weight, height))
+        cur.execute("INSERT INTO users(name, email, username, password, weight, height, gender, age) VALUES(%s, %s, %s, %s, %s, %s, %s, %s)", (name, email, username, password, weight, height, gender, age))
 
         #Commit to DB
         mysql.connection.commit()
@@ -90,7 +105,7 @@ def login():
 
         #Get user by username
         result = cur.execute("SELECT * FROM users WHERE username = %s", [username])
-
+        #cur.execute("SELECT name FROM users")
         if result > 0: #find if there is any result from db
             # get stored hash
             data = cur.fetchone()
