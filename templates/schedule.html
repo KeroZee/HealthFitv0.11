@@ -16,10 +16,11 @@
 <body>
 <!-- Navigation bar -->
 {% include 'includes/navbar.html' %}
+{% block body %}{% endblock %}
 
 <!-- calendar page -->
 <div id="overlay">
-        <div id="spinner"></div>
+    <div id="spinner"></div>
 </div>
 <div class="container-fluid" id="container">
     <div>
@@ -44,7 +45,7 @@
                         </tr>
                         <tr>
                             <!-- All the days in a week -->
-                            <th id="Sunday" class="text-danger">Sun</th>
+                            <th class="text-danger">Sun</th>
                             <th>Mon</th>
                             <th>Tues</th>
                             <th>Wed</th>
@@ -54,117 +55,117 @@
                         </tr>
                         <tr>
                             <td class="lastmth">
-                                <a href="">28</a>
+                                <span>28</span>
                             </td>
                             <td class="lastmth">
-                                <a href="">29</a>
+                                <span>29</span>
                             </td>
                             <td class="lastmth">
-                                <a href="">30</a>
+                                <span>30</span>
                             </td>
                             <td class="lastmth">
-                                <a href="">31</a>
+                                <span>31</span>
                             </td>
                             <td>
-                                <a href="{{ url_for('todolist') }}">1</a>
+                                <span>1</span>
                             </td>
                             <td>
-                                <a href="{{ url_for('todolist') }}">2</a>
+                                <span>2</span>
                             </td>
                             <td>
-                                <a href="{{ url_for('todolist') }}">3</a>
+                                <span>3</span>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <a class="text-danger" href="{{ url_for('todolist') }}">4</a>
+                                <span class="text-danger">4</span>
                             </td>
                             <td>
-                                <a href="{{ url_for('todolist') }}">5</a>
+                                <span>5</span>
                             </td>
                             <td class="p-3 mb-2 bg-danger" data-toggle="tooltip" title="Deepavali">
-                                <a href="{{ url_for('todolist') }}">6</a>
+                                <span>6</span>
                             </td>
                             <td>
-                                <a href="{{ url_for('todolist') }}">7</a>
+                                <span>7</span>
                             </td>
                             <td>
-                                <a href="{{ url_for('todolist') }}">8</a>
+                                <span>8</span>
                             </td>
                             <td>
-                                <a href="{{ url_for('todolist') }}">9</a>
+                                <span>9</span>
                             </td>
                             <td>
-                                <a href="{{ url_for('todolist') }}">10</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a class="text-danger" href="{{ url_for('todolist') }}">11</a>
-                            </td>
-                            <td>
-                                <a href="{{ url_for('todolist') }}">12</a>
-                            </td>
-                            <td>
-                                <a href="{{ url_for('todolist') }}">13</a>
-                            </td>
-                            <td>
-                                <a href="{{ url_for('todolist') }}">14</a>
-                            </td>
-                            <td>
-                                <a href="{{ url_for('todolist') }}">15</a>
-                            </td>
-                            <td>
-                                <a href="{{ url_for('todolist') }}">16</a>
-                            </td>
-                            <td>
-                                <a href="{{ url_for('todolist') }}">17</a>
+                                <span>10</span>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <a class="text-danger" href="{{ url_for('todolist') }}">18</a>
+                                <span class="text-danger">11</span>
                             </td>
                             <td>
-                                <a href="{{ url_for('todolist') }}">19</a>
+                                <span>12</span>
                             </td>
                             <td>
-                                <a href="{{ url_for('todolist') }}">20</a>
+                                <span>13</span>
                             </td>
                             <td>
-                                <a href="{{ url_for('todolist') }}">21</a>
+                                <span>14</span>
                             </td>
                             <td>
-                                <a href="{{ url_for('todolist') }}">22</a>
+                                <span>15</span>
                             </td>
                             <td>
-                                <a href="{{ url_for('todolist') }}">23</a>
+                                <span>16</span>
                             </td>
                             <td>
-                                <a href="{{ url_for('todolist') }}">24</a>
+                                <span>17</span>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <a class="text-danger" href="{{ url_for('todolist') }}">25</a>
+                                <span class="text-danger">18</span>
                             </td>
                             <td>
-                                <a href="{{ url_for('todolist') }}">26</a>
+                                <span>19</span>
                             </td>
                             <td>
-                                <a href="{{ url_for('todolist') }}">27</a>
+                                <span>20</span>
                             </td>
                             <td>
-                                <a href="{{ url_for('todolist') }}">28</a>
+                                <span>21</span>
                             </td>
                             <td>
-                                <a href="{{ url_for('todolist') }}">29</a>
+                                <span>22</span>
                             </td>
                             <td>
-                                <a href="{{ url_for('todolist') }}">30</a>
+                                <span>23</span>
+                            </td>
+                            <td>
+                                <span>24</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="text-danger">25</span>
+                            </td>
+                            <td>
+                                <span>26</span>
+                            </td>
+                            <td>
+                                <span>27</span>
+                            </td>
+                            <td>
+                                <span>28</span>
+                            </td>
+                            <td>
+                                <span>29</span>
+                            </td>
+                            <td>
+                                <span>30</span>
                             </td>
                             <td class="nextmth">
-                                <a href="">1</a>
+                                <span>1</span>
                             </td>
                         </tr>
                     </table>
@@ -184,7 +185,7 @@
                         </tr>
                         <tr>
                             <!-- All the days in a week -->
-                            <th id="Sunday" class="text-danger">Sun</th>
+                            <th class="text-danger">Sun</th>
                             <th>Mon</th>
                             <th>Tues</th>
                             <th>Wed</th>
@@ -194,140 +195,140 @@
                         </tr>
                         <tr>
                             <td class="lastmth">
-                                <a href="" onclick="Nov()">25</a>
+                                <span>25</span>
                             </td>
                             <td class="lastmth">
-                                <a href="" onclick="Nov()">26</a>
+                                <span>26</span>
                             </td>
                             <td class="lastmth">
-                                <a href="" onclick="Nov()">27</a>
+                                <span>27</span>
                             </td>
                             <td class="lastmth">
-                                <a href="" onclick="Nov()">28</a>
+                                <span>28</span>
                             </td>
                             <td class="lastmth">
-                                <a href="" onclick="Nov()">29</a>
+                                <span>29</span>
                             </td>
                             <td class="lastmth">
-                                <a href="" onclick="Nov()">30</a>
+                                <span>30</span>
                             </td>
                             <td>
-                                <a href="">1</a>
+                                <span>1</span>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <a class="text-danger" href="">2</a>
+                                <span class="text-danger">2</span>
                             </td>
                             <td>
-                                <a href="">3</a>
+                                <span>3</span>
                             </td>
                             <td>
-                                <a href="">4</a>
+                                <span>4</span>
                             </td>
                             <td>
-                                <a href="">5</a>
+                                <span>5</span>
                             </td>
                             <td>
-                                <a href="">6</a>
+                                <span>6</span>
                             </td>
                             <td>
-                                <a href="">7</a>
+                                <span>7</span>
                             </td>
                             <td>
-                                <a href="">8</a>
+                                <span>8</span>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <a class="text-danger" href="">9</a>
+                                <span class="text-danger">9</span>
                             </td>
                             <td>
-                                <a href="">10</a>
+                                <span>10</span>
                             </td>
                             <td>
-                                <a href="">11</a>
+                                <span>11</span>
                             </td>
                             <td>
-                                <a href="">12</a>
+                                <span>12</span>
                             </td>
                             <td>
-                                <a href="">13</a>
+                                <span>13</span>
                             </td>
                             <td>
-                                <a href="">14</a>
+                                <span>14</span>
                             </td>
                             <td class="p-3 mb-2 bg-primary">
-                                <a href="">15</a>
+                                <span>15</span>
                             </td>
                         </tr>
                         <tr>
                             <td class="p-3 mb-2 bg-primary">
-                                <a class="text-danger" href="">16</a>
+                                <span class="text-danger">16</span>
                             </td>
                             <td class="p-3 mb-2 bg-primary">
-                                <a href="">17</a>
+                                <span>17</span>
                             </td>
                             <td class="p-3 mb-2 bg-primary">
-                                <a href="">18</a>
+                                <span>18</span>
                             </td>
                             <td class="p-3 mb-2 bg-primary">
-                                <a href="">19</a>
+                                <span>19</span>
                             </td>
                             <td class="p-3 mb-2 bg-primary">
-                                <a href="">20</a>
+                                <span>20</span>
                             </td>
                             <td class="p-3 mb-2 bg-primary">
-                                <a href="">21</a>
+                                <span>21</span>
                             </td>
                             <td class="p-3 mb-2 bg-primary">
-                                <a href="">22</a>
+                                <span>22</span>
                             </td>
                         </tr>
                         <tr>
                             <td class="p-3 mb-2 bg-primary">
-                                <a class="text-danger" href="">23</a>
+                                <span class="text-danger">23</span>
                             </td>
                             <td class="p-3 mb-2 bg-primary">
-                                <a href="">24</a>
+                                <span>24</span>
                             </td>
                             <td class="p-3 mb-2 bg-danger" data-toggle="tooltip" title="Christmas Day">
-                                <a href="">25</a>
+                                <span>25</span>
                             </td>
                             <td class="p-3 mb-2 bg-primary">
-                                <a href="">26</a>
+                                <span>26</span>
                             </td>
                             <td class="p-3 mb-2 bg-primary">
-                                <a href="">27</a>
+                                <span>27</span>
                             </td>
                             <td class="p-3 mb-2 bg-primary">
-                                <a href="">28</a>
+                                <span>28</span>
                             </td>
                             <td class="p-3 mb-2 bg-primary">
-                                <a href="">29</a>
+                                <span>29</span>
                             </td>
                         </tr>
                         <tr>
                             <td class="p-3 mb-2 bg-primary">
-                                <a class="text-danger" href="">30</a>
+                                <span class="text-danger">30</span>
                             </td>
                             <td>
-                                <a href="">31</a>
+                                <span>31</span>
                             </td>
                             <td class="nextmth">
-                                <a href="">1</a>
+                                <span>1</span>
                             </td>
                             <td class="nextmth">
-                                <a href="">2</a>
+                                <span>2</span>
                             </td>
                             <td class="nextmth">
-                                <a href="">3</a>
+                                <span>3</span>
                             </td>
                             <td class="nextmth">
-                                <a href="">4</a>
+                                <span>4</span>
                             </td>
                             <td class="nextmth">
-                                <a href="">5</a>
+                                <span>5</span>
                             </td>
                         </tr>
                     </table>
@@ -356,117 +357,117 @@
                         </tr>
                         <tr>
                             <td class="lastmth">
-                                <a href="">30</a>
+                                <span>30</span>
                             </td>
                             <td class="lastmth">
-                                <a href="">31</a>
+                                <span>31</span>
                             </td>
                             <td class="p-3 mb-2 bg-danger" data-toggle="tooltip" title="New Year Day">
-                                <a href="">1</a>
+                                <span>1</span>
                             </td>
                             <td>
-                                <a href="">2</a>
+                                <span>2</span>
                             </td>
                             <td>
-                                <a href="">3</a>
+                                <span>3</span>
                             </td>
                             <td>
-                                <a href="">4</a>
+                                <span>4</span>
                             </td>
                             <td>
-                                <a href="">5</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a class="text-danger" href="">6</a>
-                            </td>
-                            <td>
-                                <a href="">7</a>
-                            </td>
-                            <td>
-                                <a href="">8</a>
-                            </td>
-                            <td>
-                                <a href="">9</a>
-                            </td>
-                            <td>
-                                <a href="">10</a>
-                            </td>
-                            <td>
-                                <a href="">11</a>
-                            </td>
-                            <td>
-                                <a href="">12</a>
+                                <span>5</span>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <a class="text-danger" href="">13</a>
+                                <span class="text-danger">6</span>
                             </td>
                             <td>
-                                <a href="">14</a>
+                                <span>7</span>
                             </td>
                             <td>
-                                <a href="">15</a>
+                                <span>8</span>
                             </td>
                             <td>
-                                <a href="">16</a>
+                                <span>9</span>
                             </td>
                             <td>
-                                <a href="">17</a>
+                                <span>10</span>
                             </td>
                             <td>
-                                <a href="">18</a>
+                                <span>11</span>
                             </td>
                             <td>
-                                <a href="">19</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a class="text-danger" href="">20</a>
-                            </td>
-                            <td>
-                                <a href="">21</a>
-                            </td>
-                            <td>
-                                <a href="">22</a>
-                            </td>
-                            <td>
-                                <a href="">23</a>
-                            </td>
-                            <td>
-                                <a href="">24</a>
-                            </td>
-                            <td>
-                                <a href="">25</a>
-                            </td>
-                            <td>
-                                <a href="">26</a>
+                                <span>12</span>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <a class="text-danger" href="">27</a>
+                                <span class="text-danger">13</span>
                             </td>
                             <td>
-                                <a href="">28</a>
+                                <span>14</span>
                             </td>
                             <td>
-                                <a href="">29</a>
+                                <span>15</span>
                             </td>
                             <td>
-                                <a href="">30</a>
+                                <span>16</span>
                             </td>
                             <td>
-                                <a href="">31</a>
+                                <span>17</span>
+                            </td>
+                            <td>
+                                <span>18</span>
+                            </td>
+                            <td>
+                                <span>19</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="text-danger">20</span>
+                            </td>
+                            <td>
+                                <span>21</span>
+                            </td>
+                            <td>
+                                <span>22</span>
+                            </td>
+                            <td>
+                                <span>23</span>
+                            </td>
+                            <td>
+                                <span>24</span>
+                            </td>
+                            <td>
+                                <span>25</span>
+                            </td>
+                            <td>
+                                <span>26</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="text-danger">27</span>
+                            </td>
+                            <td>
+                                <span>28</span>
+                            </td>
+                            <td>
+                                <span>29</span>
+                            </td>
+                            <td>
+                                <span>30</span>
+                            </td>
+                            <td>
+                                <span>31</span>
                             </td>
                             <td class="nextmth">
-                                <a href="">1</a>
+                                <span>1</span>
                             </td>
                             <td class="nextmth">
-                                <a href="">2</a>
+                                <span>2</span>
                             </td>
                         </tr>
                     </table>
@@ -495,117 +496,117 @@
                         </tr>
                         <tr>
                             <td class="lastmth">
-                                <a href="">27</a>
+                                <span>27</span>
                             </td>
                             <td class="lastmth">
-                                <a href="">28</a>
+                                <span>28</span>
                             </td>
                             <td class="lastmth">
-                                <a href="">29</a>
+                                <span>29</span>
                             </td>
                             <td class="lastmth">
-                                <a href="">30</a>
+                                <span>30</span>
                             </td>
                             <td class="lastmth">
-                                <a href="">31</a>
+                                <span>31</span>
                             </td>
                             <td>
-                                <a href="">1</a>
+                                <span>1</span>
                             </td>
                             <td>
-                                <a href="">2</a>
+                                <span>2</span>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <a class="text-danger">3</a>
+                                <span class="text-danger">3</span>
                             </td>
                             <td>
-                                <a href="">4</a>
+                                <span>4</span>
                             </td>
                             <td class="p-3 mb-2 bg-danger" data-toggle="tooltip" title="Chinese New Year">
-                                <a href="">5</a>
+                                <span>5</span>
                             </td>
                             <td class="p-3 mb-2 bg-danger" data-toggle="tooltip" title="Chinese New Year">
-                                <a href="">6</a>
+                                <span>6</span>
                             </td>
                             <td>
-                                <a href="">7</a>
+                                <span>7</span>
                             </td>
                             <td>
-                                <a href="">8</a>
+                                <span>8</span>
                             </td>
                             <td>
-                                <a href="">9</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a class="text-danger">10</a>
-                            </td>
-                            <td>
-                                <a href="">11</a>
-                            </td>
-                            <td>
-                                <a href="">12</a>
-                            </td>
-                            <td>
-                                <a href="">13</a>
-                            </td>
-                            <td>
-                                <a href="">14</a>
-                            </td>
-                            <td>
-                                <a href="">15</a>
-                            </td>
-                            <td>
-                                <a href="">16</a>
+                                <span>9</span>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <a class="text-danger">17</a>
+                                <span class="text-danger">10</span>
                             </td>
                             <td>
-                                <a href="">18</a>
+                                <span>11</span>
                             </td>
                             <td>
-                                <a href="">19</a>
+                                <span>12</span>
                             </td>
                             <td>
-                                <a href="">20</a>
+                                <span>13</span>
                             </td>
                             <td>
-                                <a href="">21</a>
+                                <span>14</span>
                             </td>
                             <td>
-                                <a href="">22</a>
+                                <span>15</span>
                             </td>
                             <td>
-                                <a href="">23</a>
+                                <span>16</span>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <a class="text-danger">24</a>
+                                <span class="text-danger">17</span>
                             </td>
                             <td>
-                                <a href="">25</a>
+                                <span>18</span>
                             </td>
                             <td>
-                                <a href="">26</a>
+                                <span>19</span>
                             </td>
                             <td>
-                                <a href="">27</a>
+                                <span>20</span>
                             </td>
                             <td>
-                                <a href="">28</a>
+                                <span>21</span>
+                            </td>
+                            <td>
+                                <span>22</span>
+                            </td>
+                            <td>
+                                <span>23</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="text-danger">24</span>
+                            </td>
+                            <td>
+                                <span>25</span>
+                            </td>
+                            <td>
+                                <span>26</span>
+                            </td>
+                            <td>
+                                <span>27</span>
+                            </td>
+                            <td>
+                                <span>28</span>
                             </td>
                             <td class="nextmth">
-                                <a href="">1</a>
+                                <span>1</span>
                             </td>
                             <td class="nextmth">
-                                <a href="">2</a>
+                                <span>2</span>
                             </td>
                         </tr>
                     </table>
@@ -634,140 +635,140 @@
                         </tr>
                         <tr>
                             <td class="lastmth">
-                                <a href="">24</a>
+                                <span>24</span>
                             </td>
                             <td class="lastmth">
-                                <a href="">25</a>
+                                <span>25</span>
                             </td>
                             <td class="lastmth">
-                                <a href="">26</a>
+                                <span>26</span>
                             </td>
                             <td class="lastmth">
-                                <a href="">27</a>
+                                <span>27</span>
                             </td>
                             <td class="lastmth">
-                                <a href="">28</a>
+                                <span>28</span>
                             </td>
                             <td>
-                                <a href="">1</a>
+                                <span>1</span>
                             </td>
-                            <td>
-                                <a href="">2</a>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span>2</span>
                             </td>
                         </tr>
                         <tr>
-                            <td>
-                                <a class="text-danger" href="">3</a>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span class="text-danger">3</span>
                             </td>
-                            <td>
-                                <a href="">4</a>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span>4</span>
                             </td>
-                            <td>
-                                <a href="">5</a>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span>5</span>
                             </td>
-                            <td>
-                                <a href="">6</a>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span>6</span>
                             </td>
-                            <td>
-                                <a href="">7</a>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span>7</span>
                             </td>
-                            <td>
-                                <a href="">8</a>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span>8</span>
                             </td>
-                            <td>
-                                <a href="">9</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a class="text-danger" href="">10</a>
-                            </td>
-                            <td>
-                                <a href="">11</a>
-                            </td>
-                            <td>
-                                <a href="">12</a>
-                            </td>
-                            <td>
-                                <a href="">13</a>
-                            </td>
-                            <td>
-                                <a href="">14</a>
-                            </td>
-                            <td>
-                                <a href="">15</a>
-                            </td>
-                            <td>
-                                <a href="">16</a>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span>9</span>
                             </td>
                         </tr>
                         <tr>
-                            <td>
-                                <a class="text-danger">17</a>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span class="text-danger">10</span>
                             </td>
-                            <td>
-                                <a href="">18</a>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span>11</span>
                             </td>
-                            <td>
-                                <a href="">19</a>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span>12</span>
                             </td>
-                            <td>
-                                <a href="">20</a>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span>13</span>
                             </td>
-                            <td>
-                                <a href="">21</a>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span>14</span>
                             </td>
-                            <td>
-                                <a href="">22</a>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span>15</span>
                             </td>
-                            <td>
-                                <a href="">23</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a class="text-danger" href="">24</a>
-                            </td>
-                            <td>
-                                <a href="">25</a>
-                            </td>
-                            <td>
-                                <a href="">26</a>
-                            </td>
-                            <td>
-                                <a href="">27</a>
-                            </td>
-                            <td>
-                                <a href="">28</a>
-                            </td>
-                            <td>
-                                <a href="">29</a>
-                            </td>
-                            <td>
-                                <a href="">30</a>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span>16</span>
                             </td>
                         </tr>
                         <tr>
-                            <td>
-                                <a class="text-danger" href="">31</a>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span class="text-danger">17</span>
+                            </td>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span>18</span>
+                            </td>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span>19</span>
+                            </td>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span>20</span>
+                            </td>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span>21</span>
+                            </td>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span>22</span>
+                            </td>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span>23</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span class="text-danger">24</span>
+                            </td>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span>25</span>
+                            </td>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span>26</span>
+                            </td>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span>27</span>
+                            </td>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span>28</span>
+                            </td>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span>29</span>
+                            </td>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span>30</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span class="text-danger">31</span>
                             </td>
                             <td class="nextmth">
-                                <a href="">1</a>
+                                <span>1</span>
                             </td>
                             <td class="nextmth">
-                                <a href="">2</a>
+                                <span>2</span>
                             </td>
                             <td class="nextmth">
-                                <a href="">3</a>
+                                <span>3</span>
                             </td>
                             <td class="nextmth">
-                                <a href="">4</a>
+                                <span>4</span>
                             </td>
                             <td class="nextmth">
-                                <a href="">5</a>
+                                <span>5</span>
                             </td>
                             <td class="nextmth">
-                                <a href="">6</a>
+                                <span>6</span>
                             </td>
                         </tr>
                     </table>
@@ -796,117 +797,117 @@
                         </tr>
                         <tr>
                             <td class="lastmth">
-                                <a href="">31</a>
+                                <span>31</span>
+                            </td>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span>1</span>
+                            </td>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span>2</span>
+                            </td>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span>3</span>
+                            </td>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span>4</span>
+                            </td>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span>5</span>
+                            </td>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span>6</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span class="text-danger">7</span>
+                            </td>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span>8</span>
+                            </td>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span>9</span>
+                            </td>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span>10</span>
+                            </td>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span>11</span>
+                            </td>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span>12</span>
+                            </td>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span>13</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 mb-2 bg-primary">
+                                <span class="text-danger">14</span>
                             </td>
                             <td>
-                                <a href="">1</a>
+                                <span>15</span>
                             </td>
                             <td>
-                                <a href="">2</a>
+                                <span>16</span>
                             </td>
                             <td>
-                                <a href="">3</a>
+                                <span>17</span>
                             </td>
                             <td>
-                                <a href="">4</a>
+                                <span>18</span>
                             </td>
                             <td>
-                                <a href="">5</a>
+                                <span>19</span>
                             </td>
                             <td>
-                                <a href="">6</a>
+                                <span>20</span>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <a class="text-danger">7</a>
+                                <span class="text-danger">21</span>
                             </td>
                             <td>
-                                <a href="">8</a>
+                                <span>22</span>
                             </td>
                             <td>
-                                <a href="">9</a>
+                                <span>23</span>
                             </td>
                             <td>
-                                <a href="">10</a>
+                                <span>24</span>
                             </td>
                             <td>
-                                <a href="">11</a>
+                                <span>25</span>
                             </td>
                             <td>
-                                <a href="">12</a>
+                                <span>26</span>
                             </td>
                             <td>
-                                <a href="">13</a>
+                                <span>27</span>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <a class="text-danger">14</a>
+                                <span class="text-danger">28</span>
                             </td>
                             <td>
-                                <a href="">15</a>
+                                <span>29</span>
                             </td>
                             <td>
-                                <a href="">16</a>
-                            </td>
-                            <td>
-                                <a href="">17</a>
-                            </td>
-                            <td>
-                                <a href="">18</a>
-                            </td>
-                            <td>
-                                <a href="">19</a>
-                            </td>
-                            <td>
-                                <a href="">20</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a class="text-danger">21</a>
-                            </td>
-                            <td>
-                                <a href="">22</a>
-                            </td>
-                            <td>
-                                <a href="">23</a>
-                            </td>
-                            <td>
-                                <a href="">24</a>
-                            </td>
-                            <td>
-                                <a href="">25</a>
-                            </td>
-                            <td>
-                                <a href="">26</a>
-                            </td>
-                            <td>
-                                <a href="">27</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a class="text-danger">28</a>
-                            </td>
-                            <td>
-                                <a href="">29</a>
-                            </td>
-                            <td>
-                                <a href="">30</a>
+                                <span>30</span>
                             </td>
                             <td class="nextmth">
-                                <a href="">1</a>
+                                <span>1</span>
                             </td>
                             <td class="nextmth">
-                                <a href="">2</a>
+                                <span>2</span>
                             </td>
                             <td class="nextmth">
-                                <a href="">3</a>
+                                <span>3</span>
                             </td>
                             <td class="nextmth">
-                                <a href="">4</a>
+                                <span>4</span>
                             </td>
                         </tr>
                     </table>
@@ -935,117 +936,269 @@
                         </tr>
                         <tr>
                             <td class="lastmth">
-                                <a href="">28</a>
+                                <span>28</span>
                             </td>
                             <td class="lastmth">
-                                <a href="">29</a>
+                                <span>29</span>
                             </td>
                             <td class="lastmth">
-                                <a href="">30</a>
+                                <span>30</span>
                             </td>
                             <td>
-                                <a href="">1</a>
+                                <span>1</span>
                             </td>
                             <td>
-                                <a href="">2</a>
+                                <span>2</span>
                             </td>
                             <td>
-                                <a href="">3</a>
+                                <span>3</span>
                             </td>
                             <td>
-                                <a href="">4</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a class="text-danger" href="">5</a>
-                            </td>
-                            <td>
-                                <a href="">6</a>
-                            </td>
-                            <td>
-                                <a href="">7</a>
-                            </td>
-                            <td>
-                                <a href="">8</a>
-                            </td>
-                            <td>
-                                <a href="">9</a>
-                            </td>
-                            <td>
-                                <a href="">10</a>
-                            </td>
-                            <td>
-                                <a href="">11</a>
+                                <span>4</span>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <a class="text-danger" href="">12</a>
+                                <span class="text-danger">5</span>
                             </td>
                             <td>
-                                <a href="">13</a>
+                                <span>6</span>
                             </td>
                             <td>
-                                <a href="">14</a>
+                                <span>7</span>
                             </td>
                             <td>
-                                <a href="">15</a>
+                                <span>8</span>
                             </td>
                             <td>
-                                <a href="">16</a>
+                                <span>9</span>
                             </td>
                             <td>
-                                <a href="">17</a>
+                                <span>10</span>
                             </td>
                             <td>
-                                <a href="">18</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a class="text-danger" href="">19</a>
-                            </td>
-                            <td>
-                                <a href="">20</a>
-                            </td>
-                            <td>
-                                <a href="">21</a>
-                            </td>
-                            <td>
-                                <a href="">22</a>
-                            </td>
-                            <td>
-                                <a href="">23</a>
-                            </td>
-                            <td>
-                                <a href="">24</a>
-                            </td>
-                            <td>
-                                <a href="">25</a>
+                                <span>11</span>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <a class="text-danger" href="">26</a>
+                                <span class="text-danger">12</span>
                             </td>
                             <td>
-                                <a href="">27</a>
+                                <span>13</span>
                             </td>
                             <td>
-                                <a href="">28</a>
+                                <span>14</span>
                             </td>
                             <td>
-                                <a href="">29</a>
+                                <span>15</span>
                             </td>
                             <td>
-                                <a href="">30</a>
+                                <span>16</span>
                             </td>
                             <td>
-                                <a href="">31</a>
+                                <span>17</span>
+                            </td>
+                            <td>
+                                <span>18</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="text-danger">19</span>
+                            </td>
+                            <td>
+                                <span>20</span>
+                            </td>
+                            <td>
+                                <span>21</span>
+                            </td>
+                            <td>
+                                <span>22</span>
+                            </td>
+                            <td>
+                                <span>23</span>
+                            </td>
+                            <td>
+                                <span>24</span>
+                            </td>
+                            <td>
+                                <span>25</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="text-danger">26</span>
+                            </td>
+                            <td>
+                                <span>27</span>
+                            </td>
+                            <td>
+                                <span>28</span>
+                            </td>
+                            <td>
+                                <span>29</span>
+                            </td>
+                            <td>
+                                <span>30</span>
+                            </td>
+                            <td>
+                                <span>31</span>
                             </td>
                             <td class="nextmth">
-                                <a href="">1</a>
+                                <span>1</span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="Jun" style="display:none">
+                    <h3>Month/Year:
+                        <span class="important">June / 2019</span>
+                    </h3>
+                    <table class="table table-striped" id="calendar">
+                        <tr>
+                            <th colspan="7">
+                                <button class="btn btn-success" onclick="BacktoMay()">&laquo;</button>
+                                June 2019
+                                <button class="btn btn-success" onclick="GotoJun()">&raquo;</button>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="lastmth">26</span>
+                            </td>
+                            <td>
+                                <span class="lastmth">27</span>
+                            </td>
+                            <td>
+                                <span class="lastmth">28</span>
+                            </td>
+                            <td>
+                                <span class="lastmth">29</span>
+                            </td>
+                            <td>
+                                <span class="lastmth">30</span>
+                            </td>
+                            <td>
+                                <span class="lastmth">31</span>
+                            </td>
+                            <td>
+                                <span>1</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="text-danger">2</span>
+                            </td>
+                            <td>
+                                <span>3</span>
+                            </td>
+                            <td>
+                                <span>4</span>
+                            </td>
+                            <td>
+                                <span>5</span>
+                            </td>
+                            <td>
+                                <span>6</span>
+                            </td>
+                            <td>
+                                <span>7</span>
+                            </td>
+                            <td>
+                                <span>8</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="text-danger">9</span>
+                            </td>
+                            <td>
+                                <span>10</span>
+                            </td>
+                            <td>
+                                <span>11</span>
+                            </td>
+                            <td>
+                                <span>12</span>
+                            </td>
+                            <td>
+                                <span>13</span>
+                            </td>
+                            <td>
+                                <span>14</span>
+                            </td>
+                            <td>
+                                <span>15</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="text-danger">16</span>
+                            </td>
+                            <td>
+                                <span>17</span>
+                            </td>
+                            <td>
+                                <span>18</span>
+                            </td>
+                            <td>
+                                <span>19</span>
+                            </td>
+                            <td>
+                                <span>20</span>
+                            </td>
+                            <td>
+                                <span>21</span>
+                            </td>
+                            <td>
+                                <span>22</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="text-danger">23</span>
+                            </td>
+                            <td>
+                                <span>24</span>
+                            </td>
+                            <td>
+                                <span>25</span>
+                            </td>
+                            <td>
+                                <span>26</span>
+                            </td>
+                            <td>
+                                <span>27</span>
+                            </td>
+                            <td>
+                                <span>28</span>
+                            </td>
+                            <td>
+                                <span>29</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="text-danger">30</span>
+                            </td>
+                            <td>
+                                <span class="nextmth">1</span>
+                            </td>
+                            <td>
+                                <span class="nextmth">2</span>
+                            </td>
+                            <td>
+                                <span class="nextmth">3</span>
+                            </td>
+                            <td>
+                                <span class="nextmth">4</span>
+                            </td>
+                            <td>
+                                <span class="nextmth">5</span>
+                            </td>
+                            <td>
+                                <span class="nextmth">6</span>
                             </td>
                         </tr>
                     </table>
@@ -1070,9 +1223,12 @@
 
                     <div class="p-3 mb-2 bg-secondary text-white" data-toggle="tooltip" title="Next/Last Month">
                         <div>
-                            <p id="nextlast" class="text-center">January<br>3</p>
+                            <p id="next-last" class="text-center">January<br>3</p>
                         </div>
                     </div>
+                </div>
+                <div>
+                    <button class="btn btn-success" onclick="todolist()">&raquo; Go To-Do-List &raquo;</button>
                 </div>
             </div>
             <div class="col-12">
@@ -1084,17 +1240,17 @@
                     <table id="allinstruction" class="table table-light">
                         <thead>
                         <tr class="table-success">
-                            <th>Instructions on how to use the Calendar Planner</th>
+                            <th>Instructions on how to use the Calendar Planner & To-Do-List</th>
                         </tr>
                         </thead>
                         <tr>
-                            <td>&#8226; You will need to PICK any of the days on the Calendar and click on the particular day</td>
+                            <td>&#8226; Click on the button <button class="btn btn-success">Go to To-Do-List</button> and you will enter into the To-Do-List page</td>
                         </tr>
                         <tr class="table-success">
-                            <td>&#8226; You will enter into a To-Do-List page where you will need to set the date and time slot to do your task</td>
+                            <td>&#8226; After entering into the To-Do-List page, you will need to write down the date, time and your to-do-lists in the given text boxes</td>
                         </tr>
                         <tr>
-                            <td>&#8226; After finish setting your To-Do-List, you will need to click on the
+                            <td>&#8226; After finish setting your To-Do-Lists, you will need to click on the
                                 <button class="btn btn-success">Submit your inputs</button>
                                 in order to save all your inputs
                             </td>

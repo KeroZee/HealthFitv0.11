@@ -24,8 +24,12 @@ table{
     background-color: #545454;
 }
 
-#Nov, #Dec, #Jan, #Feb, #Mar, #Apr. #May{
+#Nov, #Dec, #Jan, #Feb, #Mar, #Apr. #May, #Jun{
     width: 1160px;
+}
+
+#planner{
+    display: inline-block;
 }
 
 #planner td:hover{
@@ -34,17 +38,9 @@ table{
     background-color: white;
 }
 
-td > a:hover{
-    text-decoration: none;
-}
-
-td > a{
+td > span{
     color: black;
     font-weight: bold;
-}
-
-form{
-    border: 2px solid lightskyblue;
 }
 
 #poly{
@@ -70,11 +66,12 @@ form{
 }
 
 #legendcont{
-	border: 2px solid green;
+    border: 2px solid green;
     box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     background-color: greenyellow;
     padding: 20px 40px;
+    max-width: 290px;
 }
 
 #Nov, #Dec, #Jan, #Feb, #Mar, #Apr, #May{
@@ -85,7 +82,7 @@ form{
     font-weight: bold;
 }
 
-#Hol, #PH, #nextlast{
+#Hol, #PH, #next-last{
     color: black;
     font-weight: bold;
 }

@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='todolist.css') }}">
     <script src="{{ url_for('static', filename='todolist.js') }}"></script>
 <body>
+{% include 'includes/navbar.html' %}
+{% block body %}{% endblock %}
+
 <div id="overlay">
     <div id="spinner"></div>
 </div>
@@ -43,49 +46,49 @@
                         <span id="Mon" class="text-secondary">Monday<br>29</span>
                         <span id="Tue" class="text-secondary">Tuesday<br>30</span>
                         <span id="Wed" class="text-secondary">Wednesday<br>31</span>
-                        <span id="Thu" class="text-primary">Thursday<br>1</span>
-                        <span id="Fri" class="text-primary">Friday<br>2</span>
-                        <span id="Sat" class="text-primary">Saturday<br>3</span>
+                        <span id="Thu" class="text-success">Thursday<br>1</span>
+                        <span id="Fri" class="text-success">Friday<br>2</span>
+                        <span id="Sat" class="text-success">Saturday<br>3</span>
                         <br>
                         <span id="Sun" class="text-danger">Sunday<br>4</span>
-                        <span id="Mon" class="text-primary">Monday<br>5</span>
-                        <span id="Tue" class="text-danger" data-toggle="tooltip" title="Deepavali">Tuesday<br>6</span>
-                        <span id="Wed" class="text-primary">Wednesday<br>7</span>
-                        <span id="Thu" class="text-primary">Thursday<br>8</span>
-                        <span id="Fri" class="text-primary">Friday<br>9</span>
-                        <span id="Sat" class="text-primary">Saturday<br>10</span>
+                        <span id="Mon" class="text-success">Monday<br>5</span>
+                        <span id="Tue" class="text-success" data-toggle="tooltip" title="Deepavali">Tuesday<br>6</span>
+                        <span id="Wed" class="text-success">Wednesday<br>7</span>
+                        <span id="Thu" class="text-success">Thursday<br>8</span>
+                        <span id="Fri" class="text-success">Friday<br>9</span>
+                        <span id="Sat" class="text-success">Saturday<br>10</span>
                         <br>
                         <span id="Sun" class="text-danger">Sunday<br>11</span>
-                        <span id="Mon" class="text-primary">Monday<br>12</span>
-                        <span id="Tue" class="text-primary">Tuesday<br>13</span>
-                        <span id="Wed" class="text-primary">Wednesday<br>14</span>
-                        <span id="Thu" class="text-primary">Thursday<br>15</span>
-                        <span id="Fri" class="text-primary">Friday<br>16</span>
-                        <span id="Sat" class="text-primary">Saturday<br>17</span>
+                        <span id="Mon" class="text-success">Monday<br>12</span>
+                        <span id="Tue" class="text-success">Tuesday<br>13</span>
+                        <span id="Wed" class="text-success">Wednesday<br>14</span>
+                        <span id="Thu" class="text-success">Thursday<br>15</span>
+                        <span id="Fri" class="text-success">Friday<br>16</span>
+                        <span id="Sat" class="text-success">Saturday<br>17</span>
                         <br>
                         <span id="Sun" class="text-danger">Sunday<br>18</span>
-                        <span id="Mon" class="text-primary">Monday<br>19</span>
-                        <span id="Tue" class="text-primary">Tuesday<br>20</span>
-                        <span id="Wed" class="text-primary">Wednesday<br>21</span>
-                        <span id="Thu" class="text-primary">Thursday<br>22</span>
-                        <span id="Fri" class="text-primary">Friday<br>23</span>
-                        <span id="Sat" class="text-primary">Saturday<br>24</span>
+                        <span id="Mon" class="text-success">Monday<br>19</span>
+                        <span id="Tue" class="text-success">Tuesday<br>20</span>
+                        <span id="Wed" class="text-success">Wednesday<br>21</span>
+                        <span id="Thu" class="text-success">Thursday<br>22</span>
+                        <span id="Fri" class="text-success">Friday<br>23</span>
+                        <span id="Sat" class="text-success">Saturday<br>24</span>
                         <br>
                         <span id="Sun" class="text-danger">Sunday<br>25</span>
-                        <span id="Mon" class="text-primary">Monday<br>26</span>
-                        <span id="Tue" class="text-primary">Tuesday<br>27</span>
-                        <span id="Wed" class="text-primary">Wednesday<br>28</span>
-                        <span id="Thu" class="text-primary">Thursday<br>29</span>
-                        <span id="Fri" class="text-primary">Friday<br>30</span>
+                        <span id="Mon" class="text-success">Monday<br>26</span>
+                        <span id="Tue" class="text-success">Tuesday<br>27</span>
+                        <span id="Wed" class="text-success">Wednesday<br>28</span>
+                        <span id="Thu" class="text-success">Thursday<br>29</span>
+                        <span id="Fri" class="text-success">Friday<br>30</span>
                         <span id="Sat" class="text-secondary">Saturday<br>1</span>
 					</div>
 				</div>
 			</div>
             <div id="December" style="display:none">
                 <h3>
-                    <button class="btn btn-primary">&#10094;</button>
-                    December 2018
-                    <button class="btn btn-primary">&#10095;</button>
+                    <button class="btn btn-primary" onclick="Nov()">&#10094;</button>
+                    <span id="mth">December 2018</span>
+                    <button class="btn btn-primary" id="nextmonth" onclick="Jan()">&#10095;</button>
                 </h3>
 
                 <div class="pagination">
@@ -96,7 +99,259 @@
                         <span id="Wed" class="text-secondary">Wednesday<br>28</span>
                         <span id="Thu" class="text-secondary">Thursday<br>29</span>
                         <span id="Fri" class="text-secondary">Friday<br>30</span>
-                        <span id="Sat" class="text-primary">Saturday<br>1</span>
+                        <span id="Sat" class="text-success">Saturday<br>1</span>
+                        <br>
+                        <span id="Sun" class="text-danger">Sunday<br>2</span>
+                        <span id="Mon" class="text-success">Monday<br>3</span>
+                        <span id="Tue" class="text-success">Tuesday<br>4</span>
+                        <span id="Wed" class="text-success">Wednesday<br>5</span>
+                        <span id="Thu" class="text-success">Thursday<br>6</span>
+                        <span id="Fri" class="text-success">Friday<br>7</span>
+                        <span id="Sat" class="text-success">Saturday<br>8</span>
+                        <br>
+                        <span id="Sun" class="text-danger">Sunday<br>9</span>
+                        <span id="Mon" class="text-success">Monday<br>10</span>
+                        <span id="Tue" class="text-success">Tuesday<br>11</span>
+                        <span id="Wed" class="text-success">Wednesday<br>12</span>
+                        <span id="Thu" class="text-success">Thursday<br>13</span>
+                        <span id="Fri" class="text-success">Friday<br>14</span>
+                        <span id="Sat" class="text-primary">Saturday<br>15</span>
+                        <br>
+                        <span id="Sun" class="text-danger">Sunday<br>16</span>
+                        <span id="Mon" class="text-primary">Monday<br>17</span>
+                        <span id="Tue" class="text-primary">Tuesday<br>18</span>
+                        <span id="Wed" class="text-primary">Wednesday<br>19</span>
+                        <span id="Thu" class="text-primary">Thursday<br>20</span>
+                        <span id="Fri" class="text-primary">Friday<br>21</span>
+                        <span id="Sat" class="text-primary">Saturday<br>22</span>
+                        <br>
+                        <span id="Sun" class="text-danger">Sunday<br>23</span>
+                        <span id="Mon" class="text-primary">Monday<br>24</span>
+                        <span id="Tue" class="text-primary" data-toggle="tooltip" title="Christmas Day">Tuesday<br>25</span>
+                        <span id="Wed" class="text-primary">Wednesday<br>26</span>
+                        <span id="Thu" class="text-primary">Thursday<br>27</span>
+                        <span id="Fri" class="text-primary">Friday<br>28</span>
+                        <span id="Sat" class="text-primary">Saturday<br>29</span>
+                        <br>
+                        <span id="Sun" class="text-danger">Sunday<br>30</span>
+                        <span id="Mon" class="text-success">Monday<br>31</span>
+                        <span id="Tue" class="text-secondary">Tuesday<br>1</span>
+                        <span id="Wed" class="text-secondary">Wednesday<br>2</span>
+                        <span id="Thu" class="text-secondary">Thursday<br>3</span>
+                        <span id="Fri" class="text-secondary">Friday<br>4</span>
+                        <span id="Sat" class="text-secondary">Saturday<br>5</span>
+                    </div>
+                </div>
+            </div>
+            <div id="January" style="display:none">
+                <h3>
+                    <button class="btn btn-primary" onclick="BackDec()">&#10094;</button>
+                    <span id="mth">January 2019</span>
+                    <button class="btn btn-primary" id="nextmonth" onclick="Feb()">&#10095;</button>
+                </h3>
+
+                <div class="pagination">
+                    <div id="Jan">
+                        <span id="Sun" class="text-secondary">Sunday<br>30</span>
+                        <span id="Mon" class="text-secondary">Monday<br>31</span>
+                        <span id="Tue" class="text-danger" data-toggle="tooltip" title="New Year Day">Tuesday<br>1</span>
+                        <span id="Wed" class="text-success">Wednesday<br>2</span>
+                        <span id="Thu" class="text-success">Thursday<br>3</span>
+                        <span id="Fri" class="text-success">Friday<br>4</span>
+                        <span id="Sat" class="text-success">Saturday<br>5</span>
+                        <br>
+                        <span id="Sun" class="text-danger">Sunday<br>6</span>
+                        <span id="Mon" class="text-success">Monday<br>7</span>
+                        <span id="Tue" class="text-success">Tuesday<br>8</span>
+                        <span id="Wed" class="text-success">Wednesday<br>9</span>
+                        <span id="Thu" class="text-success">Thursday<br>10</span>
+                        <span id="Fri" class="text-success">Friday<br>11</span>
+                        <span id="Sat" class="text-success">Saturday<br>12</span>
+                        <br>
+                        <span id="Sun" class="text-danger">Sunday<br>13</span>
+                        <span id="Mon" class="text-success">Monday<br>14</span>
+                        <span id="Tue" class="text-success">Tuesday<br>15</span>
+                        <span id="Wed" class="text-success">Wednesday<br>16</span>
+                        <span id="Thu" class="text-success">Thursday<br>17</span>
+                        <span id="Fri" class="text-success">Friday<br>18</span>
+                        <span id="Sat" class="text-success">Saturday<br>19</span>
+                        <br>
+                        <span id="Sun" class="text-danger">Sunday<br>20</span>
+                        <span id="Mon" class="text-success">Monday<br>21</span>
+                        <span id="Tue" class="text-success">Tuesday<br>22</span>
+                        <span id="Wed" class="text-success">Wednesday<br>23</span>
+                        <span id="Thu" class="text-success">Thursday<br>24</span>
+                        <span id="Fri" class="text-success">Friday<br>25</span>
+                        <span id="Sat" class="text-success">Saturday<br>26</span>
+                        <br>
+                        <span id="Sun" class="text-danger">Sunday<br>27</span>
+                        <span id="Mon" class="text-success">Monday<br>28</span>
+                        <span id="Tue" class="text-success">Tuesday<br>29</span>
+                        <span id="Wed" class="text-success">Wednesday<br>30</span>
+                        <span id="Thu" class="text-success">Thursday<br>31</span>
+                        <span id="Fri" class="text-secondary">Friday<br>1</span>
+                        <span id="Sat" class="text-secondary">Saturday<br>2</span>
+                    </div>
+                </div>
+            </div>
+            <div id="February" style="display:none">
+                <h3>
+                    <button class="btn btn-primary" onclick="BackJan()">&#10094;</button>
+                    <span id="mth">February 2019</span>
+                    <button class="btn btn-primary" id="nextmonth" onclick="Mar()">&#10095;</button>
+                </h3>
+
+                <div class="pagination">
+                    <div id="Feb">
+                        <span id="Sun" class="text-secondary">Sunday<br>27</span>
+                        <span id="Mon" class="text-secondary">Monday<br>28</span>
+                        <span id="Tue" class="text-secondary">Tuesday<br>29</span>
+                        <span id="Wed" class="text-secondary">Wednesday<br>30</span>
+                        <span id="Thu" class="text-secondary">Thursday<br>31</span>
+                        <span id="Fri" class="text-success">Friday<br>1</span>
+                        <span id="Sat" class="text-success">Saturday<br>2</span>
+                        <br>
+                        <span id="Sun" class="text-danger">Sunday<br>3</span>
+                        <span id="Mon" class="text-success">Monday<br>4</span>
+                        <span id="Tue" class="text-danger" data-toggle="tooltip" title="Chinese New Year">Tuesday<br>5</span>
+                        <span id="Wed" class="text-danger" data-toggle="tooltip" title="Chinese New Year">Wednesday<br>6</span>
+                        <span id="Thu" class="text-success">Thursday<br>7</span>
+                        <span id="Fri" class="text-success">Friday<br>8</span>
+                        <span id="Sat" class="text-success">Saturday<br>9</span>
+                        <br>
+                        <span id="Sun" class="text-danger">Sunday<br>10</span>
+                        <span id="Mon" class="text-success">Monday<br>11</span>
+                        <span id="Tue" class="text-success">Tuesday<br>12</span>
+                        <span id="Wed" class="text-success">Wednesday<br>13</span>
+                        <span id="Thu" class="text-success">Thursday<br>14</span>
+                        <span id="Fri" class="text-success">Friday<br>15</span>
+                        <span id="Sat" class="text-success">Saturday<br>16</span>
+                        <br>
+                        <span id="Sun" class="text-danger">Sunday<br>17</span>
+                        <span id="Mon" class="text-success">Monday<br>18</span>
+                        <span id="Tue" class="text-success">Tuesday<br>19</span>
+                        <span id="Wed" class="text-success">Wednesday<br>20</span>
+                        <span id="Thu" class="text-success">Thursday<br>21</span>
+                        <span id="Fri" class="text-success">Friday<br>22</span>
+                        <span id="Sat" class="text-success">Saturday<br>23</span>
+                        <br>
+                        <span id="Sun" class="text-danger">Sunday<br>24</span>
+                        <span id="Mon" class="text-success">Monday<br>25</span>
+                        <span id="Tue" class="text-success">Tuesday<br>26</span>
+                        <span id="Wed" class="text-success">Wednesday<br>27</span>
+                        <span id="Thu" class="text-success">Thursday<br>28</span>
+                        <span id="Fri" class="text-secondary">Friday<br>1</span>
+                        <span id="Sat" class="text-secondary">Saturday<br>2</span>
+                    </div>
+                </div>
+            </div>
+            <div id="March" style="display:none">
+                <h3>
+                    <button class="btn btn-primary" onclick="BackFeb()">&#10094;</button>
+                    <span id="mth">March 2019</span>
+                    <button class="btn btn-primary" id="nextmonth" onclick="Apr()">&#10095;</button>
+                </h3>
+
+                <div class="pagination">
+                    <div id="Mar">
+                        <span id="Sun" class="text-secondary">Sunday<br>24</span>
+                        <span id="Mon" class="text-secondary">Monday<br>25</span>
+                        <span id="Tue" class="text-secondary">Tuesday<br>26</span>
+                        <span id="Wed" class="text-secondary">Wednesday<br>27</span>
+                        <span id="Thu" class="text-secondary">Thursday<br>28</span>
+                        <span id="Fri" class="text-success">Friday<br>1</span>
+                        <span id="Sat" class="text-primary">Saturday<br>2</span>
+                        <br>
+                        <span id="Sun" class="text-danger">Sunday<br>3</span>
+                        <span id="Mon" class="text-primary">Monday<br>4</span>
+                        <span id="Tue" class="text-primary">Tuesday<br>5</span>
+                        <span id="Wed" class="text-primary">Wednesday<br>6</span>
+                        <span id="Thu" class="text-primary">Thursday<br>7</span>
+                        <span id="Fri" class="text-primary">Friday<br>8</span>
+                        <span id="Sat" class="text-primary">Saturday<br>9</span>
+                        <br>
+                        <span id="Sun" class="text-danger">Sunday<br>10</span>
+                        <span id="Mon" class="text-primary">Monday<br>11</span>
+                        <span id="Tue" class="text-primary">Tuesday<br>12</span>
+                        <span id="Wed" class="text-primary">Wednesday<br>13</span>
+                        <span id="Thu" class="text-primary">Thursday<br>14</span>
+                        <span id="Fri" class="text-primary">Friday<br>15</span>
+                        <span id="Sat" class="text-primary">Saturday<br>16</span>
+                        <br>
+                        <span id="Sun" class="text-danger">Sunday<br>17</span>
+                        <span id="Mon" class="text-primary">Monday<br>18</span>
+                        <span id="Tue" class="text-primary">Tuesday<br>19</span>
+                        <span id="Wed" class="text-primary">Wednesday<br>20</span>
+                        <span id="Thu" class="text-primary">Thursday<br>21</span>
+                        <span id="Fri" class="text-primary">Friday<br>22</span>
+                        <span id="Sat" class="text-primary">Saturday<br>23</span>
+                        <br>
+                        <span id="Sun" class="text-danger">Sunday<br>24</span>
+                        <span id="Mon" class="text-primary">Monday<br>25</span>
+                        <span id="Tue" class="text-primary">Tuesday<br>26</span>
+                        <span id="Wed" class="text-primary">Wednesday<br>27</span>
+                        <span id="Thu" class="text-primary">Thursday<br>28</span>
+                        <span id="Fri" class="text-primary">Friday<br>29</span>
+                        <span id="Sat" class="text-primary">Saturday<br>30</span>
+                        <br>
+                        <span id="Sun" class="text-danger">Sunday<br>31</span>
+                        <span id="Mon" class="text-secondary">Monday<br>1</span>
+                        <span id="Tue" class="text-secondary">Tuesday<br>2</span>
+                        <span id="Wed" class="text-secondary">Wednesday<br>3</span>
+                        <span id="Thu" class="text-secondary">Thursday<br>4</span>
+                        <span id="Fri" class="text-secondary">Friday<br>5</span>
+                        <span id="Sat" class="text-secondary">Saturday<br>6</span>
+                    </div>
+                </div>
+            </div>
+            <div id="April" style="display:none">
+                <h3>
+                    <button class="btn btn-primary" onclick="BackMar()">&#10094;</button>
+                    <span id="mth">April 2019</span>
+                    <button class="btn btn-primary" id="nextmonth" onclick="May()">&#10095;</button>
+                </h3>
+                <div class="pagination">
+                    <div id="Apr">
+                        <span id="Sun" class="text-secondary">Sunday<br>31</span>
+                        <span id="Mon" class="text-primary">Monday<br>1</span>
+                        <span id="Tue" class="text-primary">Tuesday<br>2</span>
+                        <span id="Wed" class="text-primary">Wednesday<br>3</span>
+                        <span id="Thu" class="text-primary">Thursday<br>4</span>
+                        <span id="Fri" class="text-primary">Friday<br>5</span>
+                        <span id="Sat" class="text-primary">Saturday<br>6</span>
+                        <br>
+                        <span id="Sun" class="text-danger">Sunday<br>7</span>
+                        <span id="Mon" class="text-primary">Monday<br>8</span>
+                        <span id="Tue" class="text-primary">Tuesday<br>9</span>
+                        <span id="Wed" class="text-primary">Wednesday<br>10</span>
+                        <span id="Thu" class="text-primary">Thursday<br>11</span>
+                        <span id="Fri" class="text-primary">Friday<br>12</span>
+                        <span id="Sat" class="text-primary">Saturday<br>13</span>
+                        <br>
+                        <span id="Sun" class="text-danger">Sunday<br>14</span>
+                        <span id="Mon" class="text-success">Monday<br>15</span>
+                        <span id="Tue" class="text-success">Tuesday<br>16</span>
+                        <span id="Wed" class="text-success">Wednesday<br>17</span>
+                        <span id="Thu" class="text-success">Thursday<br>18</span>
+                        <span id="Fri" class="text-success">Friday<br>19</span>
+                        <span id="Sat" class="text-success">Saturday<br>20</span>
+                        <br>
+                        <span id="Sun" class="text-danger">Sunday<br>21</span>
+                        <span id="Mon" class="text-success">Monday<br>22</span>
+                        <span id="Tue" class="text-success">Tuesday<br>23</span>
+                        <span id="Wed" class="text-success">Wednesday<br>24</span>
+                        <span id="Thu" class="text-success">Thursday<br>25</span>
+                        <span id="Fri" class="text-success">Friday<br>26</span>
+                        <span id="Sat" class="text-success">Saturday<br>27</span>
+                        <br>
+                        <span id="Sun" class="text-danger">Sunday<br>28</span>
+                        <span id="Mon" class="text-success">Monday<br>29</span>
+                        <span id="Tue" class="text-success">Tuesday<br>30</span>
+                        <span id="Wed" class="text-secondary">Wednesday<br>1</span>
+                        <span id="Thu" class="text-secondary">Thursday<br>2</span>
+                        <span id="Fri" class="text-secondary">Friday<br>3</span>
+                        <span id="Sat" class="text-secondary">Saturday<br>4</span>
+                        <br>
                     </div>
                 </div>
             </div>
