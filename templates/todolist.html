@@ -14,10 +14,10 @@
 	 crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
 	 crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='todolist.css') }}">
-    <script src="{{ url_for('static', filename='todolist.js') }}"></script>
+    <link rel="stylesheet" href="../static/todolist.css">
+    <script src="../static/todolist.js"></script>
 <body>
-{% include 'includes/navbar.html' %}
+{% include 'includes/_navbar.html' %}
 {% block body %}{% endblock %}
 
 <div id="overlay">

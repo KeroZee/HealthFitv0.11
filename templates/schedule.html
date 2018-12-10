@@ -10,12 +10,12 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='health_fitness_plan.css') }}">
-    <script src="{{ url_for('static', filename='health_fitness_plan.js') }}"></script>
+    <link rel="stylesheet" href="../static/health_fitness_plan.css">
+    <script src="../static/health_fitness_plan.js"></script>
 </head>
 <body>
 <!-- Navigation bar -->
-{% include 'includes/navbar.html' %}
+{% include 'includes/_navbar.html' %}
 {% block body %}{% endblock %}
 
 <!-- calendar page -->
@@ -1051,6 +1051,7 @@
                         </tr>
                     </table>
                 </div>
+                <!-- June month -->
                 <div id="Jun" style="display:none">
                     <h3>Month/Year:
                         <span class="important">June / 2019</span>
@@ -1204,8 +1205,9 @@
                     </table>
                 </div>
             </div>
+            <!-- Legend menu -->
             <div id="legendcont" class="col-lg-3 col-sm-12">
-
+                <!-- Legend div -->
                 <div id="legend" class="col-12 ">
                     <p>Legend</p>
                     <p>(Hover over to get the details):</p>
@@ -1228,13 +1230,15 @@
                     </div>
                 </div>
                 <div>
-                    <button class="btn btn-success" onclick="todolist()">&raquo; Go To-Do-List &raquo;</button>
+                    <button class="btn btn-success col-12" onclick="todolist()">&raquo; Go To-Do-List &raquo;</button>
                 </div>
             </div>
             <div class="col-12">
                 <br>
             </div>
+            <!-- Instructions div -->
             <div id="plannerinstruction" class="col-lg-12">
+                <!-- Instructions collapsible button -->
                 <button id="displayinstruction" class="btn btn-primary col-12" data-toggle="collapse" data-target="#instruction">Instructions</button>
                 <div id="instruction" class="collapse">
                     <table id="allinstruction" class="table table-light">
