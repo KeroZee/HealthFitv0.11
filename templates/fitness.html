@@ -45,15 +45,55 @@
 </style>
 
 <script>
-function record() {
+function recordbreakfast() {
     let i;
-    let foodlist = [];
+    let breakfastfoodlist = [];
     let gramls = [];
     for(i=0; i < 1; i++) {
-        foodlist.push(prompt("Enter food:"));
-        gramls.push(prompt("Enter amount of " + foodlist[i] + " in gram:"));
-        document.getElementById('listadd').innerHTML += "<li>" + "Food:" + foodlist[i] + "<br />" + "Gram:" + gramls[i] + "<br />";
+        breakfastfoodlist.push(prompt("Enter food:"));
+        gramls.push(prompt("Enter amount of " + breakfastfoodlist[i] + " in gram:"));
+        document.getElementById('listadd1').innerHTML += "<li>" + "Food:" + breakfastfoodlist[i] + "<br />" + "Gram:" + gramls[i] + "<br />";
 }}
+
+function recordlunch() {
+    let i;
+    let lunchfoodlist = [];
+    let gramls = [];
+    for(i=0; i < 1; i++) {
+        lunchfoodlist.push(prompt("Enter food:"));
+        gramls.push(prompt("Enter amount of " + lunchfoodlist[i] + " in gram:"));
+        document.getElementById('listadd2').innerHTML += "<li>" + "Food:" + lunchfoodlist[i] + "<br />" + "Gram:" + gramls[i] + "<br />";
+}}
+
+function recorddinner() {
+    let i;
+    let dinnerfoodlist = [];
+    let gramls = [];
+    for(i=0; i < 1; i++) {
+        dinnerfoodlist.push(prompt("Enter food:"));
+        gramls.push(prompt("Enter amount of " + dinnerfoodlist[i] + " in gram:"));
+        document.getElementById('listadd3').innerHTML += "<li>" + "Food:" + dinnerfoodlist[i] + "<br />" + "Gram:" + gramls[i] + "<br />";
+}}
+
+function recordsnacks() {
+    let i;
+    let snacksfoodlist = [];
+    let gramls = [];
+    for(i=0; i < 1; i++) {
+        snacksfoodlist.push(prompt("Enter food:"));
+        gramls.push(prompt("Enter amount of " + snacksfoodlist[i] + " in gram:"));
+        document.getElementById('listadd4').innerHTML += "<li>" + "Food:" + snacksfoodlist[i] + "<br />" + "Gram:" + gramls[i] + "<br />";
+}}
+
+function recordexercise() {
+    let i;
+    let exerciselist = [];
+    let gramls = [];
+    for(i=0; i < 1; i++) {
+        exerciselist.push(prompt("Enter exercise:"));
+        document.getElementById('listadd5').innerHTML += "<li>" + "Exercise:" + exerciselist[i] + "<br />";
+}}
+
 </script>
 
 <div>
@@ -158,12 +198,12 @@ function record() {
             <h4>Breakfast</h4>
             <div>
                 <p style="margin:0"></p>
-                <ul id="listadd">
+                <ul id="listadd1">
                 </ul>
                 <p></p></div>
             <!--Buttons to add meal and exercises-->
             <button type="button"
-                    class="btn btn-success" onclick="record()">
+                    class="btn btn-success" onclick="recordbreakfast()">
                 Add your meal
 
             </button>
@@ -173,13 +213,12 @@ function record() {
             <h4>Lunch</h4>
             <div>
                 <p style="margin:0"></p>
-                <ul>
-                    <li>List</li>
+                <ul id="listadd2">
                 </ul>
                 <p></p></div>
             <button type="button"
                     class="btn btn-success"
-            onclick="record()">
+            onclick="recordlunch()">
                 Add your meal
             </button>
         </div>
@@ -188,13 +227,12 @@ function record() {
             <h4>Dinner</h4>
             <div>
                 <p style="margin:0"></p>
-                <ul>
-                    <li>List</li>
+                <ul id="listadd3">
                 </ul>
                 <p></p></div>
             <button type="button"
                     class="btn btn-success"
-            onclick="record()">
+            onclick="recorddinner()">
                 Add your meal
             </button>
         </div>
@@ -203,13 +241,12 @@ function record() {
             <h4>Snacks</h4>
             <div>
                 <p style="margin:0"></p>
-                <ul>
-                    <li>List</li>
+                <ul id="listadd4">
                 </ul>
                 <p></p></div>
             <button type="button"
                     class="btn btn-success"
-            onclick="record()">
+            onclick="recordsnacks()">
                 Add your meal
             </button>
         </div>
@@ -218,13 +255,12 @@ function record() {
             <h4>Exercise</h4>
             <div>
                 <p style="margin:0"></p>
-                <ul>
-                    <li>List</li>
+                <ul id="listadd5">
                 </ul>
                 <p></p></div>
             <button type="button"
                     class="btn btn-danger"
-            onclick="record()">
+            onclick="recordexercise()">
                 Add your exercise
             </button>
         </div>

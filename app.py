@@ -227,6 +227,10 @@ def guide():
 def schedule():
     return render_template('schedule.html')
 
+@app.route('/schedule/ToDoList')
+def todolist():
+    return render_template('todolist.html')
+
 @app.route('/HealthTracker')
 def HealthTracker():
     return render_template('HealthTracker.html')

@@ -12,7 +12,7 @@
 </head>
 <body style="background-image: url('../static/e5WlXi.jpg');">
     <div id="page" class="container">
-        {% include 'includes/navbar.html' %}
+        {% include 'includes/_navbar.html' %}
         <div class='container'>
             <div>
                 <h2 class="font-weight-bold text-center headers">Welcome to the Exercise Guide!</h2>
@@ -23,6 +23,10 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <img style="width: 330px; height: 258px;" src="{{ exercise.get_image() }}">
+                                <a href="#vids" class="btn btn-info tutorials" data-toggle="collapse">Tutorial Videos</a>
+                                <div id="vids" class="collapse">
+
+                                </div>
                             </div>
                             <div class="col-md-6">
                                 <p class="text-justify desc">{{ exercise.get_desc() }}</p>
@@ -47,6 +51,9 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <img style="width: 330px; height: 258px;" src="{{ exercise1.get_image() }}">
+                                <a href="#vids1" class="btn btn-info tutorials" data-toggle="collapse">Tutorial Videos</a>
+                                <div id="vids1" class="collapse">
+                                </div>
                             </div>
                             <div class="col-md-6">
                                 <p class="text-justify desc">{{ exercise1.get_desc() }}</p>
@@ -71,6 +78,9 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <img style="width: 330px; height: 258px;" src="{{ exercise2.get_image() }}">
+                                <a href="#vids2" class="btn btn-info tutorials" data-toggle="collapse">Tutorial Videos</a>
+                                <div id="vids2" class="collapse">
+                                </div>
                             </div>
                             <div class="col-md-6">
                                 <p class="text-justify desc">{{ exercise2.get_desc() }}</p>

@@ -2,6 +2,10 @@ $(document).ready(function () {
     $('[data-toggle="tooltip"]').tooltip();
 });
 
+function todolist(){
+    window.location.replace('/schedule/ToDoList');
+}
+
 function Nov(){
     nov = document.getElementById("November");
     dec = document.getElementById("December");
@@ -93,4 +97,16 @@ function BacktoApr(){
     may.style.display = 'none';
 }
 
+function GotoJun(){
+    may = document.getElementById('May');
+    jun = document.getElementById('Jun');
+    may.style.display = 'none';
+    jun.style.display = 'block';
+}
 
+function BacktoMay(){
+    may = document.getElementById('May');
+    jun = document.getElementById('Jun');
+    may.style.display = 'block';
+    jun.style.display = 'none';
+}
