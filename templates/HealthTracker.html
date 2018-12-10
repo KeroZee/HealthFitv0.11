@@ -17,11 +17,14 @@
     <script src="{{ url_for('static', filename='HealthTracker.js') }}"></script>
 </head>
 <body>
-{% include 'navbar.html' %}
+<!--Navbar-->
+{% include 'includes/_navbar.html' %}
     <div id="healthtracker">
+        <!--Update-->
     <div class="alert alert-info" id="update">
         <strong>Update!</strong> Your new heart rate as of <strong><span id="date"></span></strong> is <strong><span id="record"></span></strong> beats per minute.
     </div>
+        <!--User Stats-->
     <h1>Username</h1>
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_FF1iiKKqXcGja2DO9tplEIoq1Es4x20SIEGJXld2XWrB9zDz" alt=username">
     <div id="userstats">
@@ -35,11 +38,13 @@
     </div>
     <div id="measure">
     <div id="measure_stats">
+        <!--Measure heart rate-->
     <h3>No. of heart beats in 10 seconds:<textarea placeholder="E.g.(20, 30)" id="bpm"></textarea></h3>
     </div>
     <button type="button" class="btn btn-warning" id="myBtn" onclick="Multiply()">MEASURE</button>
 </div>
     <div id="instructions">
+        <!--Instructions-->
         <h1 id="heading">Want to measure your heart rate? Click <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#info">here</button> to see how!</h1>
         <div id="info" class="collapse">
             <h2>Learn what is a normal heart rate and how to find your pulse with your fingers or a device</h2>
