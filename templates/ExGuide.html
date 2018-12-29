@@ -9,10 +9,12 @@
     <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
     <!-- Guide Style CSS -->
     <link rel="stylesheet" href="../static/ExStyle.css">
+    <title>HealthGuide</title>
 </head>
 <body>
+{% extends 'layout.html' %}
+{% block body %}
     <div id="page" class="container">
-        {% include 'includes/_navbar.html' %}
         <div class='container'>
             <div id="header">
                 <h2 class="font-weight-bold text-center headers">Welcome to the Exercise Guide!</h2>
@@ -120,5 +122,6 @@
     <!-- jQuery first, then Bootstrap JS. -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+{% endblock %}
 </body>
 </html>
