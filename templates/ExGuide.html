@@ -23,10 +23,6 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <img style="width: 330px; height: 258px;" src="{{ exercise.get_image() }}">
-                                <a href="#vids" class="btn btn-info tutorials" data-toggle="collapse">Tutorial Videos</a>
-                                <div id="vids" class="collapse">
-
-                                </div>
                             </div>
                             <div class="col-md-6">
                                 <p class="text-justify desc">{{ exercise.get_desc() }}</p>
@@ -42,6 +38,12 @@
                                         {% endfor %}
                                     </ol>
                                 </div>
+                                <a href="#vids" class="btn btn-info" data-toggle="collapse">Tutorial Videos</a>
+                                <div id="vids" class="collapse tutorials">
+                                    <iframe width="420" height="315"
+                                        src = "{{ exercise.get_videos() }}">
+                                    </iframe>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -51,9 +53,6 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <img style="width: 330px; height: 258px;" src="{{ exercise1.get_image() }}">
-                                <a href="#vids1" class="btn btn-info tutorials" data-toggle="collapse">Tutorial Videos</a>
-                                <div id="vids1" class="collapse">
-                                </div>
                             </div>
                             <div class="col-md-6">
                                 <p class="text-justify desc">{{ exercise1.get_desc() }}</p>
@@ -69,6 +68,12 @@
                                         {% endfor %}
                                     </ol>
                                 </div>
+                                <a href="#vids1" class="btn btn-info" data-toggle="collapse">Tutorial Videos</a>
+                                <div id="vids1" class="collapse">
+                                    <iframe width="420" height="315"
+                                        src = "{{ exercise1.get_videos() }}">
+                                    </iframe>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -78,9 +83,6 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <img style="width: 330px; height: 258px;" src="{{ exercise2.get_image() }}">
-                                <a href="#vids2" class="btn btn-info tutorials" data-toggle="collapse">Tutorial Videos</a>
-                                <div id="vids2" class="collapse">
-                                </div>
                             </div>
                             <div class="col-md-6">
                                 <p class="text-justify desc">{{ exercise2.get_desc() }}</p>
@@ -95,6 +97,12 @@
                                             <li>{{ steps }}</li>
                                         {% endfor %}
                                     </ol>
+                                </div>
+                                <a href="#vids2" class="btn btn-info" data-toggle="collapse">Tutorial Videos</a>
+                                <div id="vids2" class="collapse">
+                                    <iframe width="420" height="315"
+                                        src = "{{ exercise2.get_videos() }}">
+                                    </iframe>
                                 </div>
                             </div>
                         </div>
