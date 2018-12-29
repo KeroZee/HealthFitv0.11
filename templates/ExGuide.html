@@ -10,11 +10,11 @@
     <!-- Guide Style CSS -->
     <link rel="stylesheet" href="../static/ExStyle.css">
 </head>
-<body style="background-image: url('../static/e5WlXi.jpg');">
+<body>
     <div id="page" class="container">
         {% include 'includes/_navbar.html' %}
         <div class='container'>
-            <div>
+            <div id="header">
                 <h2 class="font-weight-bold text-center headers">Welcome to the Exercise Guide!</h2>
             </div>
             <div id="guide_body">
@@ -22,13 +22,15 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-6">
-                                <img style="width: 330px; height: 258px;" src="{{ exercise.get_image() }}">
+                                <img src="{{ exercise.get_image() }}">
                             </div>
                             <div class="col-md-6">
                                 <p class="text-justify desc">{{ exercise.get_desc() }}</p>
                                 <dl>
-                                    <dt>Muscles Trained:</dt>
-                                    <dd>{{ exercise.get_benefits() }}</dd>
+                                    <dt class = 'ben_list'>Muscles Trained:</dt>
+                                    {% for benefits in exercise.get_benefits() %}
+                                    <dd>{{ benefits }}</dd>
+                                    {% endfor %}
                                 </dl>
                                 <a href="#randex" class="btn btn-info" data-toggle="collapse">Instructions</a>
                                 <div id="randex" class="collapse">
@@ -52,13 +54,15 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-6">
-                                <img style="width: 330px; height: 258px;" src="{{ exercise1.get_image() }}">
+                                <img src="{{ exercise1.get_image() }}">
                             </div>
                             <div class="col-md-6">
                                 <p class="text-justify desc">{{ exercise1.get_desc() }}</p>
                                 <dl>
-                                    <dt>Muscles trained:</dt>
-                                    <dd>{{ exercise1.get_benefits() }}</dd>
+                                    <dt class = 'ben_list'>Muscles trained:</dt>
+                                    {% for benefits in exercise1.get_benefits() %}
+                                    <dd>{{ benefits }}</dd>
+                                    {% endfor %}
                                 </dl>
                                 <a href="#randex1" class="btn btn-info" data-toggle="collapse">Instructions</a>
                                 <div id="randex1" class="collapse">
@@ -87,8 +91,10 @@
                             <div class="col-md-6">
                                 <p class="text-justify desc">{{ exercise2.get_desc() }}</p>
                                 <dl>
-                                    <dt>Muscles trained:</dt>
-                                    <dd>{{ exercise2.get_benefits() }}</dd>
+                                    <dt class = 'ben_list'>Muscles trained:</dt>
+                                    {% for benefits in exercise2.get_benefits() %}
+                                    <dd>{{ benefits }}</dd>
+                                    {% endfor %}
                                 </dl>
                                 <a href="#randex2" class="btn btn-info" data-toggle="collapse">Instructions</a>
                                 <div id="randex2" class="collapse">
